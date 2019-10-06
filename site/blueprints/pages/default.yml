@@ -1,0 +1,7 @@
+title: Standard
+preset: page
+
+fields:
+  text:
+    label: Begrüßungstext
+    type:  textarea

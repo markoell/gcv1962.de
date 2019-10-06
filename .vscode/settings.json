@@ -1,0 +1,20 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        //"**/kirby/kirby": true,
+        "**/kirby/panel": true,
+        "**/kirby/media": true,
+        "**/kirby/site/accounts": true,
+        "**/kirby/site/sessions": true,
+        "*.zip":true,
+        "**/node_modules": true,
+        "**/sync.ffs_db": true,
+        "**/sync.ffs_lock": true,
+        "*.ffs_gui": true,
+    },
+    "editor.detectIndentation": false
+}

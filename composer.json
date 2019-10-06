@@ -1,0 +1,18 @@
+{
+    "name": "markoell/gcv1962.de",
+    "description": "Website project for \"Gundelsheimer Carneval-Verein 1962 e.V.\"",
+    "type": "project",
+    "require": {
+        "getkirby/cms": "^3.2"
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Marco Koellner",
+            "email": "it@mk-swe.de"
+        }
+    ]
+}

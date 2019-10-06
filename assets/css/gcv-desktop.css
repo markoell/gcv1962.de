@@ -1,0 +1,32 @@
+@media (min-width: 992px) {
+  
+   body {
+    padding-top: 58px;
+   }
+     
+    nav.fixed-top{
+      position: fixed;
+    }
+  
+    footer.fixed-bottom{
+      position: fixed;
+    }
+  
+    div#logo {
+      position: fixed;
+        top: 20px;
+        left: 15%;
+        background-color: white;
+        padding: 0px 10px;
+      }
+  
+      .floatablegroup {
+        padding: 5px;
+        float:left
+      }
+  
+      .dropdown-menu-large {
+        width: 950px !important;
+      }
+  }
+  

@@ -1,0 +1,35 @@
+title: Termine
+pages: false
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+  text:
+    label: Text
+    type:  textarea
+    fields:
+  dates:
+    label: Adressen
+    type: structure
+    fields:
+      title:
+        label: Titel
+        type: text
+      date:
+        label: Datum
+        type: date
+        fields:
+      time:
+        label: Uhrzeit
+        type: time
+      place:
+        label: Ort
+        type: text
+        fields:
+      public:
+        label: Öffentlich
+        type: toggle
+        text: 
+            - Intern
+            - Öffentlich

@@ -1,0 +1,22 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+/* 
+https://philipnewcomer.net/2014/04/target-internet-explorer-10-11-css/
+IE10+ CSS styles go here */
+  .figure {
+      display: inline;
+  }
+
+  .card {
+    display: block; 
+    /* When you use an image with class 'img-fluid' within a 'card', the width is correct but the height is the original height of the image.
+      https://github.com/twbs/bootstrap/issues/21885 */
+  }
+
+  .gcv-card-footer {
+    background-color: rgba(32, 255, 9, 0.188);
+  }
+
+  .gcv-card-title {
+    background: -ms-linear-gradient(top, #0e5b37, rgba(255, 255, 255, 0));
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "gcv1962.de",
+  "version": "0.3.0",
+  "description": "Website project for www.gcv1962.de",
+  "main": "kirby/index.php",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "bootstrap": "^4.3.1",
+    "cookieconsent": "^3.1.1",
+    "jquery": "^3.4.1",
+    "photoswipe": "^4.1.3",
+    "popper.js": "^1.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markoell/gcv1962.de.git"
+  },
+  "keywords": [
+    "GCV",
+    "GCV1962",
+    "Carneval"
+  ],
+  "author": "Marco Köllner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markoell/gcv1962.de/issues"
+  },
+  "homepage": "https://github.com/markoell/gcv1962.de#readme"
+}

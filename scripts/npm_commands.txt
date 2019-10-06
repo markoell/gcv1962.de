@@ -1,0 +1,7 @@
+npm install xxx --save-prod <Dependencies> / --save-dev <devDependencies>
+
+npm uninstall --save <Dependencies>
+
+npm ls (List installed packages)
+npm outdated (List outdated packages and available updates)
+npm update (Update outdated packages)

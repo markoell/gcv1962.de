@@ -1,0 +1,83 @@
+
+:root{
+  --bgcolor:  rgba(218, 214, 209, 0.188);
+  --gcvcolor: #0e5b37;
+}
+
+body {
+  /* padding-bottom: 130px; */
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#logo img{
+  width: 200px;
+}
+
+/*-----------------------------------
+        carousel
+-----------------------------------*/
+
+.carousel-item {
+    height: 50vh;
+    background-size: cover;
+    background-position:  center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+}
+
+.my-gallery figcaption{
+  display: none;
+}
+
+div.odd {
+  background-color: var(--bgcolor);
+}
+
+.parent {
+  /* text-decoration: underline; */
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--gcvcolor);
+  font-weight: 600
+}
+
+.child {
+  font-size: 13px;
+}
+
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+
+.gcv-card-footer {
+  background-color: var(--bgcolor);
+}
+
+.gcv-card-title {
+  background: linear-gradient(to bottom right, var(--gcvcolor) 5%, transparent);
+}
+
+.myAnsprache h1 {
+  padding-bottom: 20px;
+}
+
+.myAnsprache p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 130%;
+  font-weight: 300;
+  line-height: 150%;
+}
+
+.myAnsprache img {
+  border-radius: 2%;
+  margin-top: 10px;
+}
