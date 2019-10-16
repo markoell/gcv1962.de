@@ -16,5 +16,6 @@
         "**/sync.ffs_lock": true,
         "*.ffs_gui": true,
     },
-    "editor.detectIndentation": false
+    "editor.detectIndentation": false,
+    "git.enableCommitSigning": true
 }
