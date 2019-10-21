@@ -8,7 +8,7 @@
       </div>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-        <li><a href="#" class="btn btn-success mr-5 btn-large">Tickets</a></li>
+        <li><a href="http://localhost/gcv1962/Startseite/Kartenvorverkauf" class="btn btn-success mr-5 btn-large">Tickets</a></li>
         <?php foreach($pages->visible()->filterby('num','<','5') as $item): ?>
             <li class="nav-item <?= r($item->hasVisibleChildren(), ' dropdown') ?>">
             <?php
