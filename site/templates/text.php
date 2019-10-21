@@ -2,9 +2,9 @@
 
 <div class="container pt-5">
     <h1><?= $page->title()->html() ?></h1>
-</div> 
+</div>
 <section id="<?= $page->title()->html() ?>">
-    <div class="container">
+    <div class="container<?= e($page->id() == "historisches/chronik"," text-justify") ?>">
         <?= $page->text()->kirbytext() ?>
     </div>
 </section>
