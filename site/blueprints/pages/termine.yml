@@ -33,3 +33,12 @@ fields:
         text: 
             - Intern
             - Öffentlich
+      target:
+        label: Url
+        type: url
+        placeholder: Weiterführende Links
+      targettext:
+        label: Buttontext
+        type: text
+        placeholder: Text im Button
+        
