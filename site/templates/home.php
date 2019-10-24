@@ -28,30 +28,9 @@
         <!-- 4. Nur Taschengeldjob anzeigen; Link mit Katersymbol (Modal)-->
             <?php if($next = page('home/Taschengeldjob')): ?>
             <div class="col-sm text-center">
-                <img src="<?=  $logo = asset('/assets/images/Logo.jpg')->resize(100)->url() ?>" class="rounded mx-auto d-block" alt="Kater Logo">
+                <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block" alt="Kater Logo">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalLong1">
-                <?= $next->title()->html()  ?>
-                </button>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle"><?= $next->title()->html() ?></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <?= $next->text()->kirbytext() ?>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-dismiss="modal">Schließen</button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+                <?php snippet('modal', ['large' => false, 'item' => $next]) ?>
             </div>
             <?php endif ?>
             <!-- Werbung -->
@@ -59,65 +38,23 @@
             <?php if($next = page('home/ihre-werbung')): ?>
             
             <div class="col-sm text-center">
-            <img src="<?=  $logo = asset('/assets/images/Logo.jpg')->resize(100)->url() ?>" class="rounded mx-auto d-block" alt="Kater Logo">
+                <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block" alt="Kater Logo">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalLong2">
-                <?= $next->title()->html()  ?>
-                </button>
-
-            <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-xl" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle"><?= $next->title()->html() ?></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body text-left">
-                            <?= $next->text()->kirbytext() ?>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-dismiss="modal">Schließen</button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
+            <?php snippet('modal', ['large' => true, 'item' => $next]) ?>
+            </div>
             <?php endif ?>
         <!-- 5. Ansprache des PP; Link mit Katersymbol (Modal?)-->
             <?php if($next = page('home/Prinzenpaars')): ?>
             <div class="col-sm text-center">
-                <img src="<?=  $logo = asset('/assets/images/Logo.jpg')->resize(100)->url() ?>" class="rounded mx-auto d-block" alt="Kater Logo">
+                <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block" alt="Kater Logo">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalLong2">
-                <?= $next->title()->html()  ?>
-                </button>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-xl" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle"><?= $next->title()->html() ?></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <?= $next->text()->kirbytext() ?>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-dismiss="modal">Schließen</button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+                <?php snippet('modal', ['large' => true, 'item' => $next]) ?>
             </div>
             <?php endif ?>
         <!-- 6. Aktuelle Termine; Link mit Katersymbol (Modal)-->
         <?php if($next = page('home/Termine')): ?>
             <div class="col-sm text-center">
-                <img src="<?=  $logo = asset('/assets/images/Logo.jpg')->resize(100)->url() ?>" class="rounded mx-auto d-block" alt="Kater Logo">
+            <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block" alt="Kater Logo">
                 <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalLong3">
                 <?= $next->title()->html()  ?>
                 </button>
