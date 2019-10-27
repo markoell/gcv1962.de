@@ -20,7 +20,7 @@
           <!-- Modal -->
         </li>
 
-        <?php foreach ($pages->visible()->filterby('num', '<', '5') as $item): ?>
+        <?php foreach ($kirby->collection("mainPages") as $item): ?>
         <li
           class="nav-item <?= r($item->hasVisibleChildren(), ' dropdown') ?>">
           <?php
