@@ -36,4 +36,4 @@
   <title><?= $site->title()->html() ?> | <?= $page->headline()->html() ?></title>
 </head>
 <body>
-<?php snippet('menu') ?>
+<?php snippet('nav') ?>
