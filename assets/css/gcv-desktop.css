@@ -31,7 +31,7 @@
     div.sticky{
       position: relative !important;
       top: 0px !important;
-      left: -100px !important;
+      left: 0px !important;
       padding: 0 !important;
     }
 
@@ -40,8 +40,12 @@
     }
 
     .sticky > div {
-      font-size: 75%;
-      padding-top: 10px !important;
+      font-size: 13px;
+      padding-top: 0px !important;
+    }
+
+    .sticky p {
+      margin-bottom: 0px;
     }
 
     .floatablegroup {

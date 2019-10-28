@@ -1,5 +1,5 @@
 <?php
 
-return function ($site) {
-    return $site->children()->listed()->filterby('num', '<', '5')->flip();
+return function ($pages) {
+    return $pages->listed(); //->filterby('num', '<', '5')->flip();
 };
