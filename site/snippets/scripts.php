@@ -1,20 +1,20 @@
 <?= js('assets/js/photoswipe-gcv.js') ?>
 <script>
-    function scrollFunction() {
+    // function scrollFunction() {
 
-        if($(window).width() <= 992){
-            return
-        }
+    //     if($(window).width() <= 992){
+    //         return
+    //     }
 
-        var logo = $("#logo img");
+    //     var logo = $("#logo img");
 
-        if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
-            logo.css({ width: "100px" });
-        }
-        else {
-            logo.css({ width: "200px" });
-        }
-    }
+    //     if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+    //         logo.css({ width: "100px" });
+    //     }
+    //     else {
+    //         logo.css({ width: "200px" });
+    //     }
+    // }
 
     $(document).ready(
         function(){

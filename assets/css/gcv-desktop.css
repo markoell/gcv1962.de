@@ -14,16 +14,40 @@
   
     div#logo {
       position: fixed;
-        top: 20px;
+        top: 15px;
         left: 15%;
         background-color: white;
         padding: 0px 10px;
-      }
-  
-      .floatablegroup {
-        padding: 5px;
-        float:left
-      }
+    }
+    
+    #logo img{
+      width: 150px;
+    }
+
+    #logo > div{
+      padding-top: 35px;
+    }
+
+    div.sticky{
+      position: relative !important;
+      top: 0px !important;
+      left: -100px !important;
+      padding: 0 !important;
+    }
+
+    .sticky img{
+      width: 75px !important;
+    }
+
+    .sticky > div {
+      font-size: 75%;
+      padding-top: 10px !important;
+    }
+
+    .floatablegroup {
+      padding: 5px;
+      float:left
+    }
   
       .dropdown-menu-large {
         width: 950px !important;

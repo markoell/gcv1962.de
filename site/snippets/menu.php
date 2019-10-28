@@ -5,10 +5,9 @@
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div id="logo" class="rounded">
-      <a id="homelink" href="<?= url() ?>" rel="home"><img
-          src="<?= $site->url() ?>/assets/images/LogoGr.jpg" alt=""
-          class="rounded d-block"></a>
+    <div id="logo" class="rounded sticky">
+      <a id="homelink" href="<?= url() ?>" rel="home"><img src="<?= asset('/assets/images/gcvLogo.svg')->url() ?>" alt="GCV 1962 Logo" class="rounded"></a>
+      <div><?= $site->logotext()->kirbytext() ?></div>
     </div>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
