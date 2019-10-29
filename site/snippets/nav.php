@@ -27,9 +27,28 @@
           <li class="nav-item <?= e($itemHaslistedChildren, 'dropdown') ?>">
 
             <?php if($itemHaslistedChildren): ?>
-            <a class="nav-link dropdown-toggle" href="<?= $item->url() ?>" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <?= html($item->title()) ?>
             </a>
+            <div id="<?= $item->id() ?>" class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <?php if($item->is("AkteureGruppen")): ?>
+              <div class="d-lg-flex flex-row" >
+              <?php foreach ($item->children()->listed() as $subItem): ?>
+                  <div class="col pb-3 px-0">
+                  <a class="dropdown-item font-weight-bold" href="<?= $subItem->url() ?>"><?= $subItem->title()->html() ?></a>
+                  <div class="dropdown-divider"></div>
+                  <?php foreach ($subItem->children()->listed() as $subSubItem): ?>
+                    <a class="dropdown-item <?= e($subSubItem->hasListedChildren(), "font-weight-bold border-bottom") ?>" href="<?= $subItem->url() ?>#<?= $subSubItem->slug() ?>"><?= $subSubItem->title()->html() ?></a>
+                  <?php endforeach ?> 
+                  </div>
+              <?php endforeach ?>
+              </div>  
+                <?php else: ?>
+              <?php foreach ($item->children()->listed() as $subItem): ?>
+                  <a class="dropdown-item" href="<?= $subItem->url() ?>"><?= $subItem->title()->html() ?></a>
+                  <?php endforeach ?>
+                <?php endif ?>              
+            </div>
             <?php else: //if($itemHaslistedChildren) ?>
             <a class="nav-link" href="<?= $item->url() ?>"><?= html($item->title()) ?></a>
             <?php endif //if($itemHaslistedChildren) ?>
