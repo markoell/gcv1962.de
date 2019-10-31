@@ -16,7 +16,7 @@
 -->
 <!-- 3. Begrüßung Präsi anzeigen -->
 <?php if($next = page('home/Ansprache')): ?>
-    <section id="Ansprache">
+    <section id="Ansprache" class="js--section-speach">
         <div class="container mt-5 myAnsprache">
             <?php snippet(strtolower($next->intendedTemplate()), array('data' => $next)) ?>
         </div>
