@@ -5,7 +5,7 @@
       href="<?= $subItem->url() ?>"><?= $subItem->title()->html() ?></a>
     <div class="dropdown-divider"></div>
     <?php foreach ($subItem->children()->listed() as $subSubItem): ?>
-    <a class="dropdown-item <?= e($subSubItem->hasListedChildren(), "font-weight-bold border-bottom") ?>"
+    <a class="dropdown-item nav-item-small <?= e($subSubItem->hasListedChildren(), "font-weight-bold") ?>"
       href="<?= $subItem->url() ?>#<?= $subSubItem->slug() ?>"><?= $subSubItem->title()->html() ?></a>
     <?php endforeach // $subItem->children()->listed()?>
   </div>

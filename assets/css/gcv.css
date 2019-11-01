@@ -30,10 +30,21 @@ h1,h2,h3,h4,h5,h6 {
   padding-top: 35px ;
 }
 
-img.logo{
-  width: 100px;
+/*--------------------------------*/
+/* Navigationlinks                */
+/*--------------------------------*/
+
+.parent {
+  /* text-decoration: underline; */
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--gcvcolor);
+  font-weight: 600
 }
 
+.nav-item-small {
+  font-size: 85%;
+}
 
 /*--------------------------------*/
 /* Carousel                       */
@@ -57,14 +68,6 @@ img.logo{
 
 div.odd {
   background-color: var(--bgcolor);
-}
-
-.parent {
-  /* text-decoration: underline; */
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: var(--gcvcolor);
-  font-weight: 600
 }
 
 .child {
@@ -102,4 +105,8 @@ ul.share-buttons li{
 .myAnsprache img {
   border-radius: 2%;
   margin-top: 10px;
+}
+
+img.logo{
+  width: 100px;
 }
