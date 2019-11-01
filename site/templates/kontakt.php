@@ -48,4 +48,4 @@
 	</fieldset>
 </form>
 </div>
-<?php snippet('footer') ?>
+<?php snippet('footer/footerBar') ?>

@@ -3,4 +3,4 @@
     <?php snippet('termine', array('data' => $page, 'filter' => '*'))?>
 </div>
 <!-- TODO: Termine anzeigen -->
-<?php snippet('footer') ?>
+<?php snippet('footer/footerBar') ?>

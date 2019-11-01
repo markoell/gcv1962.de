@@ -15,4 +15,4 @@
 </div>
 
 <?php snippet('scripts') ?>
-<?php snippet('footer') ?>
+<?php snippet('footer/footerBar') ?>

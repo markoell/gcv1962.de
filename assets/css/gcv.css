@@ -74,15 +74,6 @@ div.odd {
   font-size: 13px;
 }
 
-ul.share-buttons{
-  list-style: none;
-  padding: 0;
-}
-
-ul.share-buttons li{
-  display: inline;
-}
-
 .gcv-card-footer {
   background-color: var(--bgcolor);
 }
