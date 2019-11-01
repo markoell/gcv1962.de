@@ -24,4 +24,12 @@
     .carousel-item {
         height: 33vh;
     }
+
+    #modalTickets h5,li {
+      font-size: 85%;
+    }
+
+    #modalTickets ,button{
+      font-size: 75%;
+    }
 }
