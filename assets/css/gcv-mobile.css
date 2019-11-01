@@ -4,11 +4,12 @@
     }
     
     #logo img{
-      width: 100px;
+      width: 75px;
     }
     
     #logo > div{
-      padding-top: 10px ;
+      font-size: 11px;
+      padding-top: 0px;
     }
         
     h1 {

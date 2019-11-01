@@ -28,7 +28,7 @@
         <!-- 4. Nur Taschengeldjob anzeigen; Link mit Katersymbol (Modal)-->
             <?php if($next = page('home/Taschengeldjob')): ?>
             <div class="col-sm text-center">
-                <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block" alt="Kater Logo">
+                <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block py-2" alt="Kater Logo">
                 <!-- Button trigger modal -->
                 <?php snippet('modal', ['large' => false, 'item' => $next]) ?>
             </div>
@@ -38,7 +38,7 @@
             <?php if($next = page('home/ihre-werbung')): ?>
             
             <div class="col-sm text-center">
-                <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block" alt="Kater Logo">
+                <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block py-2" alt="Kater Logo">
             <!-- Button trigger modal -->
             <?php snippet('modal', ['large' => true, 'item' => $next]) ?>
             </div>
@@ -46,7 +46,7 @@
         <!-- 5. Ansprache des PP; Link mit Katersymbol (Modal?)-->
             <?php if($next = page('home/Prinzenpaars')): ?>
             <div class="col-sm text-center">
-                <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block" alt="Kater Logo">
+                <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block py-2" alt="Kater Logo">
                 <!-- Button trigger modal -->
                 <?php snippet('modal', ['large' => true, 'item' => $next]) ?>
             </div>
@@ -54,7 +54,7 @@
         <!-- 6. Aktuelle Termine; Link mit Katersymbol (Modal)-->
         <?php if($next = page('home/Termine')): ?>
             <div class="col-sm text-center">
-            <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block" alt="Kater Logo">
+            <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block py-2" alt="Kater Logo">
                 <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalAppointments">
                 <?= $next->title()->html()  ?>
                 </button>
