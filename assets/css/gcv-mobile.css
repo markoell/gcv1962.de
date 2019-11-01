@@ -4,8 +4,13 @@
     }
     
     #logo img{
-        width: 100px;
-      }
+      width: 75px;
+    }
+    
+    #logo > div{
+      font-size: 11px;
+      padding-top: 0px;
+    }
         
     h1 {
         font-size: 1.5rem;

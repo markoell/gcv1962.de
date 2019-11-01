@@ -21,9 +21,9 @@
   <?= css('assets/vendors/photoswipe/default-skin/default-skin.css') ?>
 
 
-  <?= css('assets/css/gcv-mobile.css') ?>
-  <?= css('assets/css/gcv-desktop.css') ?>
   <?= css('assets/css/gcv.css') ?>
+  <?= css('assets/css/gcv-desktop.css') ?>
+  <?= css('assets/css/gcv-mobile.css') ?>
   <?= css('assets/css/gcv-ie.css') ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -36,4 +36,4 @@
   <title><?= $site->title()->html() ?> | <?= $page->headline()->html() ?></title>
 </head>
 <body>
-<?php snippet('menu') ?>
+<?php snippet('nav/navigationBar', array('sticky' => $sticky)) ?>

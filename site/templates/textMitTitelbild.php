@@ -2,7 +2,7 @@
     $image = $page->image();
 ?>
 
-<?php snippet('header') ?>
+<?php snippet('header', array('sticky' => true)) ?>
 
 <?php if($image): ?>
     <div class="container-fluid">
@@ -15,4 +15,4 @@
     <?= $page->text()->kirbytext() ?>
 </div>
 <?php snippet('scripts') ?> 
-<?php snippet('footer') ?>
+<?php snippet('footer/footerBar') ?>
