@@ -76,6 +76,7 @@ div.odd {
 
 .gcv-card-footer {
   background-color: var(--bgcolor);
+  z-index: 999;
 }
 
 .gcv-card-title {
