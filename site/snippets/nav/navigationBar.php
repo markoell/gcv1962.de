@@ -7,7 +7,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div id="logo" class="navbar-brand rounded">
+    <div id="logo" class="navbar-brand rounded <?= e($sticky, 'sticky')?>">
       <?php snippet("nav/mainLogo") ?>
     </div>
 
@@ -42,7 +42,7 @@
           <a class="nav-link" href="<?= $item->url() ?>"><?= html($item->title()) ?></a>
           <?php endif //if($itemHaslistedChildren)?>
         </li>
-        <?php endforeach ?>
+        <?php endforeach //$kirby->collection("mainPages") ?>
 
       </ul>
     </div>

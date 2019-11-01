@@ -1,64 +1,73 @@
-@media (min-width: 992px) {
+@media (min-width: 992px) {  
   
-   body {
+  body {
     padding-top: 58px;
-   }
-     
-    nav.fixed-top{
-      position: fixed;
-    }
-  
-    footer.fixed-bottom{
-      position: fixed;
-    }
-  
-    div#logo {
-      position: fixed;
-        top: 15px;
-        left: 15%;
-        background-color: white;
-        padding: 0px 10px;
-    }
-    
-    #logo img{
-      width: 150px;
-    }
+  }
 
-    #logo > div{
-      padding-top: 35px;
-    }
+  nav.fixed-top{
+    position: fixed;
+  }
 
-    div.sticky{
-      position: relative !important;
-      top: 0px !important;
-      left: 0px !important;
-      padding: 0 !important;
-    }
+  footer.fixed-bottom{
+  position: fixed;
+  }
 
-    .sticky img{
-      width: 75px !important;
-    }
+  div#logo {
+  position: fixed;
+    top: 15px;
+    left: 15%;
+    background-color: rgba(255, 255, 255, 0.950);
+    padding: 0px 10px;
+  }
 
-    .sticky > div {
-      font-size: 13px;
-      padding-top: 0px !important;
-    }
+  #logo img{
+  width: 150px;
+  transition: width 1s;
+  }
 
-    .sticky p {
-      margin-bottom: 0px;
-    }
+  #logo > div{
+  padding-top: 5px;
+  -webkit-transition: font-size 1s, padding-top 1s;
+  -moz-transition: font-size 1s, padding-top 1s;
+  -ms-transition: font-size 1s, padding-top 1s;
+  -o-transition: font-size 1s, padding-top 1s;
+  transition: font-size 1s, padding-top 1s;
+}
 
-    #AkteureGruppen {
-      transform:translate(-65%,0)
-    }
+  .sticky img{
+  width: 65px !important;
+  -webkit-transition: width 1s;
+  -moz-transition: width 1s;
+  -ms-transition: width 1s;
+  -o-transition: width 1s;
+  transition: width 1s;
+}
 
-    .floatablegroup {
-      padding: 5px;
-      float:left
-    }
-  
-      .dropdown-menu-large {
-        width: 950px !important;
-      }
+  .sticky > div {
+  font-size: 10px;
+  padding-top: 0px !important;
+  transition: font-size 1s, padding-top 1s;
+  -webkit-transition: font-size 1s, padding-top 1s;
+  -moz-transition: font-size 1s, padding-top 1s;
+  -ms-transition: font-size 1s, padding-top 1s;
+  -o-transition: font-size 1s, padding-top 1s;
+}
+
+  .sticky p {
+  margin-bottom: 0px;
+}
+
+  #AkteureGruppen {
+  transform:translate(-65%,0)
+  }
+
+  .floatablegroup {
+  padding: 5px;
+  float:left
+  }
+
+  .dropdown-menu-large {
+    width: 950px !important;
+  }
   }
   

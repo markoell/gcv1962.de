@@ -1,4 +1,4 @@
-<?php snippet('header') ?>
+<?php snippet('header', array('sticky' => true)) ?>
 
 <?php $n = 0; foreach($page->children()->visible() as $section): $n++; ?>
     <div id="<?= $section->uid() ?>" class="<?php e($n%2, 'even', 'odd') ?>">

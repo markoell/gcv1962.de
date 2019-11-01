@@ -1,4 +1,4 @@
-<?php snippet('header') ?>
+<?php snippet('header', array('sticky' => true)) ?>
 <div class="container">
 
 <form enctype="multipart/form-data" method="post" name="id-1" class=" o-form c-form c-form--contact" id="field-1" action="/das-drk/kontakt/kontaktformular.html?tx_form_form%5Baction%5D=process&amp;cHash=1a6a036f054259671af48550bbb383c4">

@@ -7,7 +7,7 @@ $(document).ready(function () {
       $('#logo').removeClass('sticky');
     }
   }, {
-    offset: '60px;'
+    offset: '320px;'
   });
 
   //Remove the '#' char on redirect via logo

@@ -1,4 +1,4 @@
-<?php snippet('header') ?>
+<?php snippet('header', array('sticky' => false)) ?>
 
 <!-- 1. Bilder anzeigen -->
 <?php if($next = page('home/Titelbilder')): ?>
