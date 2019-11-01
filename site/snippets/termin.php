@@ -1,8 +1,7 @@
 <div class="row">
   <div class="col-2">
     <h4><span class="badge badge-secondary"><?= $item->date()->toDate('d') ?></span></h4>
-    <h5><?= $item->date()->toDate('M - Y') ?>
-      <h5>
+    <h5><?= $item->date()->toDate('M - Y') ?></h5>
   </div>
   <div class="col">
     <h5 class="text-uppercase text-left"><?= $item->title()->html() ?>

@@ -48,3 +48,5 @@
     </div>
   </div>
 </nav>
+
+<?php snippet("nav/ticketsModal") ?>
