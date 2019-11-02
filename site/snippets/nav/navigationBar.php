@@ -1,4 +1,5 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+
   <div class="container">
 
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -8,7 +9,7 @@
     </button>
 
     <div id="logo" class="navbar-brand rounded <?= e($sticky, 'sticky')?>">
-      <?php snippet("nav/mainLogo") ?>
+      <?php snippet("nav/mainlogo") ?>
     </div>
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -18,7 +19,7 @@
           <?php snippet("nav/tickets") ?>
         </li>
 
-        <?php foreach ($kirby->collection("mainPages") as $item): ?>
+        <?php foreach ($kirby->collection("mainpages") as $item): ?>
         <?php $itemHaslistedChildren = $item->hasListedChildren() ?>
         <li class="nav-item <?= e($itemHaslistedChildren, 'dropdown') ?>">
 
@@ -30,7 +31,7 @@
           <div id="<?= $item->id() ?>" class="dropdown-menu"
             aria-labelledby="navbarDropdown">
             <?php if ($item->is("AkteureGruppen")): ?>
-              <?php snippet("nav/AkteureGruppen", ['item' => $item]) ?>
+              <?php snippet("nav/akteuregruppen", ['item' => $item]) ?>
             <?php else: // $item->is("AkteureGruppen")?>
             <?php foreach ($item->children()->listed() as $subItem): ?>
             <a class="dropdown-item"
@@ -49,4 +50,4 @@
   </div>
 </nav>
 
-<?php snippet("nav/ticketsModal") ?>
+<?php snippet("nav/ticketsmodal") ?>

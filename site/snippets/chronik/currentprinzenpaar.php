@@ -6,7 +6,7 @@
     <div class="card-body">
       <div class="row">
         <?php if($data->hasImages()): ?>
-          <p class="col-lg-4"><img src="<?= $data->image()->resize(427, 600)->url() ?>" alt="" class="rounded card-img"></p>
+          <p class="col-lg-4"><img src="<?= $data->image()->resize(500)->url() ?>" alt="" class="rounded card-img"></p>
         <?php endif ?>
         <div class="col card-text">
           <h2><?php echo $data->title()->kirbytext() ?></h2>

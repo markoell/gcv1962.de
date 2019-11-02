@@ -36,4 +36,4 @@
   <title><?= $site->title()->html() ?> | <?= $page->headline()->html() ?></title>
 </head>
 <body>
-<?php snippet('nav/navigationBar', array('sticky' => $sticky)) ?>
+<?php snippet('nav/navigationbar', array('sticky' => $sticky)) ?>

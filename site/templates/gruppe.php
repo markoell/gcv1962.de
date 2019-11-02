@@ -2,4 +2,4 @@
 <?php snippet($page->intendedTemplate(), array('data' => $page) ) ?>
 
 <?php snippet('scripts') ?> 
-<?php snippet('footer/footerBar') ?>
+<?php snippet('footer/footerbar') ?>

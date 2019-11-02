@@ -1,0 +1,11 @@
+title: Karte Breit
+preset: page
+pages: false
+
+fields:
+  names:
+    label: Titel
+    type:  textarea
+  year:
+    label: Jahr / Kampagne
+    type: text
