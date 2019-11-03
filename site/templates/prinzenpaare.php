@@ -7,7 +7,7 @@
       $items = $kirby->collection('prinzenpaare');
       $current = $items->first();  
     ?>
-    <?php snippet('chronik/currentPrinzenpaar', array('data' => $current)) ?>
+    <?php snippet('chronik/currentprinzenpaar', array('data' => $current)) ?>
     <div class="w-100"></div>
     <?php $n = 0; foreach($items as $item):
 
@@ -23,4 +23,4 @@
 </div>
 
   <?php snippet('scripts') ?>
-  <?php snippet('footer/footerbar') ?>
+  <?php snippet('footer/footerBar') ?>
