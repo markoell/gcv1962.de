@@ -7,4 +7,4 @@
 <?php endforeach ?>
 
 <?php snippet('scripts') ?> 
-<?php snippet('footer/footerBar') ?>
+<?php snippet('footer/footerbar') ?>
