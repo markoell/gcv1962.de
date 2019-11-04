@@ -10,4 +10,4 @@
     <?php endforeach ?>
 </div>
 <?php snippet('scripts') ?> 
-<?php snippet('footer/footerbar') ?>
+<?php snippet('footer/footerBar') ?>
