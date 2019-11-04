@@ -1,18 +1,26 @@
 <?php snippet('header', array('sticky' => true)) ?>
 
 <div class="container pt-5">
-    <h1><?php echo $page->title()->html() ?></h1>
+  <h1><?php echo $page->title()->html() ?></h1>
+  <div class="row">
+    <?php 
+      $items = $kirby->collection('prinzenpaare');
+      $current = $items->first();  
+    ?>
+    <?php snippet('chronik/currentprinzenpaar', array('data' => $current)) ?>
+    <div class="w-100"></div>
+    <?php $n = 0; foreach($items as $item):
 
-    <?php $n = 0; foreach($children as $child): $n++; ?>
-        <?php if($n == 1 || $n%3 == 2): ?>
-            <div class="row">
-        <?php endif ?>
-        <?php snippet($child->intendedTemplate(), array('data' => $child)) ?>
-        <?php if($n == 1 || $n%3 == 1): ?>
-            </div>
-        <?php endif ?>
-    <?php endforeach ?>
+      $n++;
+      if($item == $current) {
+        continue;
+      } 
+
+      snippet('chronik/prinzenpaar', array('data' => $item));
+    
+    endforeach ?>
+  </div>
 </div>
 
-<?php snippet('scripts') ?>
-<?php snippet('footer/footerBar') ?>
+  <?php snippet('scripts') ?>
+  <?php snippet('footer/footerBar') ?>
