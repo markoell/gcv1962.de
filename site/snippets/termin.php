@@ -7,7 +7,7 @@
     <h5 class="text-uppercase text-left"><?= $item->title()->html() ?>
     </h5>
     <ul class="list-inline text-justify">
-      <li class="list-inline-item"><i class="far fa-calendar mr-2" aria-hidden="true"></i><?= $item->date()->toDate('l') ?>
+      <li class="list-inline-item"><i class="far fa-calendar mr-2" aria-hidden="true"></i><?= strftime('%A', $item->date()->toTimestamp()) ?>
       </li>
       <li class="list-inline-item"><i class="far fa-clock mr-2" aria-hidden="true"></i><?= $item->time()->toDate('H:i') ?>
       </li>
