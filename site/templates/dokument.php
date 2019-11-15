@@ -8,10 +8,10 @@
             <a class="btn btn-success" href="<?= $document->url() ?>">Download <?= $document->filename() ?> </a>
         </div>
         <div class="row pb-2">
-            <embed src="<?= $document->url() ?>" style="width:100%; height:100vh"  type='application/pdf'>
+            <!-- <embed src="<?= $document->url() ?>" style="width:100%; height:100vh"  type='application/pdf'> -->
         </div>
     <?php endif ?>
 </div> 
 
 <?php snippet('scripts') ?> 
-<?php snippet('footer/footerBar') ?>
+<?php snippet('footer/footerbar') ?>
