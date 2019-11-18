@@ -3,7 +3,7 @@
 <div class="container pt-5">
     <h1><?= $page->title()->html() ?></h1>
     <?= $page->text()->kirbytext() ?>
-    <?php if($document = $page->dokument()): ?>
+    <?php if($document = $page->file($page->dokument())): ?>
         <div class="row mb-2">
             <a class="btn btn-success" href="<?= $document->url() ?>">Download <?= $document->filename() ?> </a>
         </div>
@@ -14,4 +14,4 @@
 </div> 
 
 <?php snippet('scripts') ?> 
-<?php snippet('footer/footerBar') ?>
+<?php snippet('footer/footerbar') ?>

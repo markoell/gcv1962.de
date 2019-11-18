@@ -1,0 +1,12 @@
+title: Werbung
+preset: page
+
+pages:
+  template: werbung
+  max: 2
+  min: 0
+
+fields:
+  text:
+    label: Text
+    type:  textarea

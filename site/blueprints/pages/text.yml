@@ -6,3 +6,10 @@ fields:
   text:
     label: Text
     type:  textarea
+
+options:
+  changeTemplate:
+    - default
+    - werbung
+    - content
+    

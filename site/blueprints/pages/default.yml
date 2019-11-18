@@ -1,7 +1,7 @@
-title: Standard
+title: Standardvorlage
 preset: page
 
 fields:
   text:
-    label: Begrüßungstext
+    label: Text
     type:  textarea
