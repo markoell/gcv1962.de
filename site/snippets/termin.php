@@ -18,7 +18,7 @@
   </div>
   <?php if ($item->target()->isNotEmpty()): ?>
   <div class="col-3">
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#hintModal_<?= $id ?>"><?= $item->targettext()->html()?><?php $item->targettext() ?></button>
+    <a href="<?= $item->target()->toUrl()?>" class="btn btn-success"><?= $item->targettext()->html() ?></a>
   </div>
   <?php endif ?>
 </div>
