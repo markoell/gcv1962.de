@@ -8,6 +8,16 @@
     position: fixed;
   }
 
+  nav .dropdown-toggle::after {
+    content: none;
+  }
+
+  /* a.nav-link:hover,
+  a.nav-link:active {
+    border-bottom-color: var(--gcvcolor) !important;
+    border-bottom-width: 2px !important;
+  } */
+
   footer.fixed-bottom{
   position: fixed;
   }
