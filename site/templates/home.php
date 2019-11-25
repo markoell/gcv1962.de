@@ -22,7 +22,7 @@
   </div>
 </section>
 <?php endif ?>
-<section id="themen" class="mb-3">
+<section id="themen" class="js--section-topics my-5">
   <div class="container mt-5">
     <div class="row d-flex justify-content-arround">
       <!-- 4. Nur Taschengeldjob anzeigen; Link mit Katersymbol (Modal)-->

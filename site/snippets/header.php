@@ -20,7 +20,6 @@
   <?= css('assets/vendors/photoswipe/photoswipe.css') ?>
   <?= css('assets/vendors/photoswipe/default-skin/default-skin.css') ?>
 
-
   <?= css('assets/css/gcv.css') ?>
   <?= css('assets/css/gcv-desktop.css') ?>
   <?= css('assets/css/gcv-mobile.css') ?>
