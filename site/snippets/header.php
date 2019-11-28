@@ -16,14 +16,14 @@
   <?= css('assets/vendors/fontawesome-free/css/all.css') ?>
   <?= css('assets/vendors/bootstrap/css/bootstrap.css') ?>
   <?= css('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,400i,700') ?>
-  <?= css('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap') ?>
+  <?= css('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap') ?>
   <?= css('assets/vendors/photoswipe/photoswipe.css') ?>
   <?= css('assets/vendors/photoswipe/default-skin/default-skin.css') ?>
 
-  <?= css('assets/css/gcv.css') ?>
-  <?= css('assets/css/gcv-desktop.css') ?>
-  <?= css('assets/css/gcv-mobile.css') ?>
-  <?= css('assets/css/gcv-ie.css') ?>
+  <?= css('assets/css/gcv.css?v1.0') ?>
+  <?= css('assets/css/gcv-desktop.css?v1.0') ?>
+  <?= css('assets/css/gcv-mobile.css?v1.0') ?>
+  <?= css('assets/css/gcv-ie.css?v1.0') ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     

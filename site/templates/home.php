@@ -25,38 +25,7 @@
 <section id="themen" class="js--section-topics my-5">
   <div class="container mt-5">
     <div class="row d-flex justify-content-arround">
-      <!-- 4. Nur Taschengeldjob anzeigen; Link mit Katersymbol (Modal)-->
-      <?php if($next = page('home/Taschengeldjob')): ?>
-      <div class="col-sm text-center">
-        <img
-          src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>"
-          class="logo mx-auto d-block py-2" alt="Kater Logo">
-        <!-- Button trigger modal -->
-        <?php snippet('modal', ['large' => false, 'item' => $next]) ?>
-      </div>
-      <?php endif ?>
-      <!-- Werbung -->
 
-      <?php if($next = page('home/ihre-werbung')): ?>
-
-      <div class="col-sm text-center">
-        <img
-          src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>"
-          class="logo mx-auto d-block py-2" alt="Kater Logo">
-        <!-- Button trigger modal -->
-        <?php snippet('modal', ['large' => true, 'item' => $next]) ?>
-      </div>
-      <?php endif ?>
-      <!-- 5. Ansprache des PP; Link mit Katersymbol (Modal?)-->
-      <?php if($next = page('home/Prinzenpaars')): ?>
-      <div class="col-sm text-center">
-        <img
-          src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>"
-          class="logo mx-auto d-block py-2" alt="Kater Logo">
-        <!-- Button trigger modal -->
-        <?php snippet('modal', ['large' => true, 'item' => $next]) ?>
-      </div>
-      <?php endif ?>
       <!-- 6. Aktuelle Termine; Link mit Katersymbol (Modal)-->
       <?php if($next = page('home/Termine')): ?>
       <div class="col-sm text-center">
@@ -87,6 +56,38 @@
             </div>
           </div>
         </div>
+      </div>
+      <?php endif ?>
+      <!-- 4. Nur Taschengeldjob anzeigen; Link mit Katersymbol (Modal)-->
+      <?php if($next = page('home/Taschengeldjob')): ?>
+      <div class="col-sm text-center">
+        <img
+          src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>"
+          class="logo mx-auto d-block py-2" alt="Kater Logo">
+        <!-- Button trigger modal -->
+        <?php snippet('modal', ['large' => false, 'item' => $next]) ?>
+      </div>
+      <?php endif ?>
+      <!-- Werbung -->
+
+      <?php if($next = page('home/ihre-werbung')): ?>
+
+      <div class="col-sm text-center">
+        <img
+          src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>"
+          class="logo mx-auto d-block py-2" alt="Kater Logo">
+        <!-- Button trigger modal -->
+        <?php snippet('modal', ['large' => true, 'item' => $next]) ?>
+      </div>
+      <?php endif ?>
+      <!-- 5. Ansprache des PP; Link mit Katersymbol (Modal?)-->
+      <?php if($next = page('home/Prinzenpaars')): ?>
+      <div class="col-sm text-center">
+        <img
+          src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>"
+          class="logo mx-auto d-block py-2" alt="Kater Logo">
+        <!-- Button trigger modal -->
+        <?php snippet('modal', ['large' => true, 'item' => $next]) ?>
       </div>
       <?php endif ?>
     </div>
