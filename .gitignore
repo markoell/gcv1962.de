@@ -26,6 +26,9 @@ thumbs/*
 site/cache/*
 !site/cache/index.html
 
+#exclude license files
+/site/config/.license
+
 #additional excludes
 /media/
 /site/accounts
