@@ -12,11 +12,7 @@
     </div>
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-
-        <li class="nav-item pr-3">
-          <?php snippet("nav/tickets") ?>
-        </li>
+      <ul class="navbar-nav ml-auto pr-5">
 
         <?php foreach ($kirby->collection("mainPages") as $item): ?>
         <?php $itemHaslistedChildren = $item->hasListedChildren() ?>
@@ -44,7 +40,12 @@
         </li>
         <?php endforeach //$kirby->collection("mainPages") ?>
 
+        
+
       </ul>
+      <div class="nav-item">
+          <?php snippet("nav/tickets") ?>
+        </div>
     </div>
   </div>
 </nav>

@@ -1,5 +1,7 @@
 $(document).ready(function () {
-  /* For the sticky navigation */
+  
+  
+  /* Waypoints For the sticky navigation */
   $('.js--section-speach').waypoint(function (direction) {
     if (direction == "down") {
       $('#logo').addClass('sticky');
@@ -9,7 +11,8 @@ $(document).ready(function () {
   }, {
     offset: '320px;'
   });
-
+    
+  
   $('.modal').on('hidden.bs.modal', function(event) {
     $(this).removeClass( 'fv-modal-stack' );
     $('body').data( 'fv_open_modals', $('body').data( 'fv_open_modals' ) - 1 );

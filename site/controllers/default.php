@@ -3,9 +3,9 @@
 return function ($site, $pages, $page) {
     $sections = array();
     
-    foreach ($page->children()->visible() as $item) {
+    foreach ($page->children()->listed() as $item) {
         $sections[] = $item;
-        foreach ($item->children()->visible() as $subItem) {
+        foreach ($item->children()->listed() as $subItem) {
             $sections[] = $subItem;
         }
     }

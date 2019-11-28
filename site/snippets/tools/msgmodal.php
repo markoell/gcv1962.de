@@ -14,9 +14,9 @@
             <a href="https://secure.deskapp.de/shop/gcv1962/cat/index/sCategory/50"
               style="color: white; text-decoration: underline; text-transform: uppercase;">hier</a>
             um zu unserem Online-Kartenvorverkauf zu gelangen.</p>
-          <p>Der Ticketverkauf startet ab dem <strong>11.12.2019.</strong></p>
-          <p>Zusätzlich gibt es die Möglichkeit am <strong>07.12.2019 von 13 bis 14 Uhr</strong> im Vereinsheim des GCV,
-            Roemheldstraße (neben der Deutschmeisterhalle) Tickets zu erwerben.</p>
+          <p>Der Online-Kartenverkauf startet ab dem <strong>11.12.2019.</strong></p>
+          <p>Vorher gibt es die Möglichkeit am <strong>07.12.2019 von 13 bis 14 Uhr</strong> im Vereinsheim des GCV,
+            Roemheldstraße (neben der Deutschmeisterhalle) Karten zu erwerben.</p>
 
         </div>
       </div>
