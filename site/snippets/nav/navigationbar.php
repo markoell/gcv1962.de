@@ -51,4 +51,3 @@
 </nav>
 
 <?php snippet("nav/ticketsModal") ?>
-<?php snippet("tools/msgmodal") ?>

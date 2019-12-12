@@ -7,13 +7,11 @@
 </section>
 <?php endif ?>
 <!-- 2. TopThema anzeigen -->
-<!-- 
 <?php if($next = page('home/TopThema')): ?>
 <div id="<?= $next->title()->html() ?>">
   <?php snippet(strtolower($next->intendedTemplate()), array('data' => $next)) ?>
 </div>
 <?php endif ?>
--->
 <!-- 3. Begrüßung Präsi anzeigen -->
 <?php if($next = page('home/Ansprache')): ?>
 <section id="Ansprache" class="js--section-speach">
