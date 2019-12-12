@@ -23,6 +23,7 @@ fields:
       time:
         label: Uhrzeit
         type: time
+        step: 1
       place:
         label: Ort
         type: text
