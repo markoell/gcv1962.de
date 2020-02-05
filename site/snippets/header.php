@@ -22,7 +22,7 @@
 
   <?= css('assets/css/gcv.css?v1.0') ?>
   <?= css('assets/css/gcv-desktop.css?v1.0') ?>
-  <?= css('assets/css/gcv-mobile.css?v1.0') ?>
+  <?= css('assets/css/gcv-mobile.css?v1.1') ?>
   <?= css('assets/css/gcv-ie.css?v1.0') ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

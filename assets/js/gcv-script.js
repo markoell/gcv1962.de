@@ -12,7 +12,8 @@ $(document).ready(function () {
     offset: '320px;'
   });
     
-  
+ /* 
+  //show modal in modal
   $('.modal').on('hidden.bs.modal', function(event) {
     $(this).removeClass( 'fv-modal-stack' );
     $('body').data( 'fv_open_modals', $('body').data( 'fv_open_modals' ) - 1 );
@@ -37,7 +38,7 @@ $(document).ready(function () {
   });        
 
   $('#modalTickets').on('shown.bs.modal', function (event) {
-    $('#msgModal').modal('show');
+    //$('#msgModal').modal('show');
   });
-
+  */
 });

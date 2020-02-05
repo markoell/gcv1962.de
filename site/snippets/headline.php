@@ -1,8 +1,14 @@
-<div class="modal fade" id="Prior" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<?php
+$query = $kirby->url('index');
+$samePage = substr(Url::last(), 0, strlen($query)) === $query;
+?>
+<div class="modal fade" id="Prior" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle"><?= $data->title()->html() ?></h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle"><?= $data->title()->html() ?>
+        </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -15,11 +21,11 @@
       </div>
     </div>
   </div>
-<script>
-    $(document).ready(function(){
-        if(window.location.href == <?= '"'. $site->url() .'/"' ?>){
-            $('#Prior').modal();    
-        }
+  <?php if (!$samePage): ?>
+  <script>
+    $(document).ready(function() {
+      $('#Prior').modal('show');
     });
-</script>
+  </script>
+  <?php endif ?>
 </div>
