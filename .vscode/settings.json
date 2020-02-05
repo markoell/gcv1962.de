@@ -1,19 +1,26 @@
 {
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/kirby": true,
-        "**/site/accounts": true,
-        "**/site/sessions": true,
-        "**/media": true,
-        "**/vendor": true,
-        "*.zip":true,
-        "**/node_modules": true,
+      "*.ffs_gui": true,
+      "*.zip": true,
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/.hg": true,
+      "**/.svn": true,
+      "**/CVS": true,
+      "**/kirby": true,
+      "**/media": true,
+      "**/node_modules": true,
+      "**/site/accounts": true,
+      "**/site/sessions": true,
+      "**/vendor": true
     },
     "editor.detectIndentation": false,
     "git.enableCommitSigning": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "files.watcherExclude": {
+      "**/kirby/src/**": true
+    },
+    "files.associations": {
+      ".txt": "md"
+  }
 }
