@@ -20,17 +20,16 @@
   <?= css('assets/vendors/photoswipe/photoswipe.css') ?>
   <?= css('assets/vendors/photoswipe/default-skin/default-skin.css') ?>
 
-  <?= css('assets/css/gcv.css?v1.0') ?>
-  <?= css('assets/css/gcv-desktop.css?v1.0') ?>
-  <?= css('assets/css/gcv-mobile.css?v1.1') ?>
-  <?= css('assets/css/gcv-ie.css?v1.0') ?>
+  <?= Bnomei\Fingerprint::css('assets/css/gcv.css') ?>
+  <?= Bnomei\Fingerprint::css('assets/css/gcv-media.css') ?>
+  <?= Bnomei\Fingerprint::css('assets/css/gcv-ie.css') ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     
-  <?= js('assets/vendors/jquery/jquery.js') ?>
-  <?= js('assets/vendors/bootstrap/js/bootstrap.bundle.min.js') ?>
-  <?= js('assets/vendors/photoswipe/photoswipe.min.js') ?>
-  <?= js('assets/vendors/photoswipe/photoswipe-ui-default.min.js') ?>
+  <?= js('/assets/vendors/jquery/jquery.js') ?>
+  <?= js('/assets/vendors/bootstrap/js/bootstrap.bundle.min.js') ?>
+  <?= js('/assets/vendors/photoswipe/photoswipe.min.js') ?>
+  <?= js('/assets/vendors/photoswipe/photoswipe-ui-default.min.js') ?>
     
   <title><?= $site->title()->html() ?> | <?= $page->headline()->html() ?></title>
 </head>
