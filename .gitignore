@@ -61,6 +61,8 @@ site/cache/*
 
 #Exclude 3rdParty sources
 assets/vendors/
+site/plugins/
+!site/plugins/custom-tags/
 node_modules/
 sync.ffs_db
 sync.ffs_lock
