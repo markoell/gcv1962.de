@@ -80,4 +80,46 @@
     width: 950px !important;
   }
 }
+
+/*--------------------------------*/
+/*------ Mobile Devices ----------*/
+/*--------------------------------*/
+
+@media (max-width: 991px){
+  nav.fixed-top{
+      position: relative;
+  }
+  
+  #logo img{
+    width: 75px;
+  }
+  
+  #logo > div{
+    font-size: 11px;
+    padding-top: 0px;
+  }
+      
+  h1 {
+      font-size: 1.5rem;
+  }
+  
+  h2,h3,h4 {
+      font-size: 1rem;
+      font-weight: bold;
+  }
+
+  .carousel-item {
+      height: 33vh;
+  }
+
+  #modalTickets h5,li, 
+  #modalAppointments h5,li {
+    font-size: 85%;
+  }
+
+  #modalTickets button,
+  #modalAppointments button {
+    font-size: 75%;
+  }
+}
   

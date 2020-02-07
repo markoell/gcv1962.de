@@ -4,8 +4,72 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6bdf6b2a8d4d4cc289b37d6de1e02054",
+    "content-hash": "661a0f7c9e9e058ee07af9d06e3e3ff6",
     "packages": [
+        {
+            "name": "bnomei/kirby3-fingerprint",
+            "version": "3.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bnomei/kirby3-fingerprint.git",
+                "reference": "4b1c92d9acb77e431da50378f612ff839c32ecf3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bnomei/kirby3-fingerprint/zipball/4b1c92d9acb77e431da50378f612ff839c32ecf3",
+                "reference": "4b1c92d9acb77e431da50378f612ff839c32ecf3",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.1",
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "getkirby/cms": "^3.2",
+                "nunomaduro/phpinsights": "^1.8",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^8.3"
+            },
+            "suggest": {
+                "bnomei/kirby3-autoid": "Get modification timestamp for kirby files (not css/js) at almost zero-cpu-cost",
+                "bnomei/kirby3-security-headers": "Let's make the web a saver place – sensible defaults included.",
+                "diverently/laravel-mix-kirby": "Consider using this plugin instead if all your assets are versioned by laravel mix."
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "kirby-cms-path": "tests/kirby"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bnomei\\": "classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bruno Meilick",
+                    "email": "b@bnomei.com"
+                }
+            ],
+            "description": "File Method and css/js helper to add cachebusting hash and optional Subresource Integrity to file",
+            "keywords": [
+                "Fingerprint",
+                "assets",
+                "cache-buster",
+                "hash",
+                "json",
+                "kirby3",
+                "kirby3-cms",
+                "kirby3-plugin",
+                "manifest",
+                "manifest-file",
+                "subresource-integrity"
+            ],
+            "time": "2019-12-20T20:43:20+00:00"
+        },
         {
             "name": "claviska/simpleimage",
             "version": "3.3.3",
@@ -618,6 +682,7 @@
                 "escaper",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-escaper",
             "time": "2018-04-25T15:48:53+00:00"
         }
     ],

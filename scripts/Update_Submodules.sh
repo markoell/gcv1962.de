@@ -15,5 +15,5 @@ git submodule foreach --recursive git pull
 
 #--- Checkin --------------------------------
 git add -A
-git commit -am "Kirby Update"
+git commit -am "Kirby & Tools Update"
 #git push
