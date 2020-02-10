@@ -1,0 +1,7 @@
+type: pages
+headline: Termine
+parent: site.find("termine")
+sortBy: from asc
+template: termin
+empty: Bis jetzt keine Termine
+sortBy: date desc

@@ -1,0 +1,66 @@
+title: Termin
+icon: 📆
+num: "{{ page.from.toDate('Ymd') }}"
+
+status:
+    draft: Entwurf
+    listed: Sichtbar
+
+columns:
+  # main
+  main:
+    width: 2/3
+    sections:
+
+      # a simple form
+      content:
+        type: fields
+        fields:
+          from:
+            label: Start
+            type: date
+            width: 1/2
+            default: today
+            time: 
+              step: 1
+          completeDay:
+            label: Ganztägig
+            type: toggle
+            #text: 
+            #  - Intern
+            #  - Öffentlich
+            width: 1/2
+            default: false
+          location:
+            label: Location
+            type: text
+            width: 1/2
+          link:
+            label: Link
+            type: url
+            width: 1/2
+          text:
+            label: Beschreibung
+            type: textarea
+
+  # sidebar
+  sidebar:
+    width: 1/3
+    sections:
+
+      # a list of files
+      files:
+        type: files
+        headline: Anhänge
+        max: 3
+
+      # further fields
+      flags:
+        type: fields
+        fields:
+          categories:
+            label: Optionen
+            type: checkboxes
+            options:
+              public: Öffentlich
+              buyable: Kartenverkauf
