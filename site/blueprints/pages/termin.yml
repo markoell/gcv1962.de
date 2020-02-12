@@ -4,6 +4,7 @@ num: "{{ page.from.toDate('Ymd') }}"
 
 status:
     draft: Entwurf
+    unlisted: Unsichtbar
     listed: Sichtbar
 
 columns:
@@ -63,4 +64,4 @@ columns:
             type: checkboxes
             options:
               public: Öffentlich
-              buyable: Kartenverkauf
+              buy: Kartenverkauf

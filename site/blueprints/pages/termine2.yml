@@ -9,6 +9,10 @@ options:
 
 drafts:
   extends: sections/termine
+  headline: Entwürfe
+
+unlisted:
+  extends: sections/termine
   headline: Ungelistete Termine
 
 listed:
