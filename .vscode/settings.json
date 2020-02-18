@@ -7,12 +7,9 @@
       "**/.hg": true,
       "**/.svn": true,
       "**/CVS": true,
-      "**/kirby": true,
       "**/media": true,
-      "**/node_modules": true,
       "**/site/accounts": true,
       "**/site/sessions": true,
-      "**/vendor": true
     },
     "editor.detectIndentation": false,
     "git.enableCommitSigning": true,
