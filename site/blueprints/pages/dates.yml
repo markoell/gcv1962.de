@@ -8,13 +8,13 @@ options:
   delete: false
 
 drafts:
-  extends: sections/termine
+  extends: sections/dates
   headline: Entwürfe
 
 unlisted:
-  extends: sections/termine
+  extends: sections/dates
   headline: Ungelistete Termine
 
 listed:
-  extends: sections/termine
+  extends: sections/dates
   headline: Veröffentlichte Termine

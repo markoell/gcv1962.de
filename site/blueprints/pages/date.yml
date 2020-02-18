@@ -1,6 +1,6 @@
 title: Termin
 icon: 📆
-num: "{{ page.from.toDate('Ymd') }}"
+num: "{{ page.date.toDate('Ymd') }}"
 
 status:
     draft: Entwurf
@@ -17,7 +17,7 @@ columns:
       content:
         type: fields
         fields:
-          from:
+          date:
             label: Start
             type: date
             width: 1/2
@@ -64,4 +64,4 @@ columns:
             type: checkboxes
             options:
               public: Öffentlich
-              buy: Kartenverkauf
+              tickets: Kartenverkauf
