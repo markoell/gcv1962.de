@@ -2,7 +2,7 @@ $template = 'Title: {Title}
 
 ----
 
-From: {From}
+Date: {From}
 
 ----
 
@@ -38,7 +38,7 @@ $content | ForEach-Object {
     $complete = $(if($time -eq "00:00" -or $title -eq "") { "true" } else { "false" })
     $categories = @()
     if($public -eq "true") { $categories += "public" }
-    if($target -eq "Tickets") { $categories += "buy" }
+    if($target -eq "Tickets") { $categories += "tickets" }
     $folder = New-Item -ItemType Directory -Path ..\..\termine\_drafts\ -Name ($title.Replace("- ","-").Replace(" ","-").Replace(".",""))
     $file = New-Item -ItemType File -Path $folder.FullName -Name "termin.txt"
     $template.Replace("{Title}",$title).Replace("{From}","$date $time").Replace("{Location}", $place).Replace("{completeDay}",$complete).Replace("{Url}", $link).Replace("{Text}",$target).Replace("{Categories}", [string]::Join(', ', $categories)) | Out-File -Encoding utf8 $file
