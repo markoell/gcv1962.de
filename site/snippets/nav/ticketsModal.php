@@ -3,7 +3,7 @@
   $items = $kirby->collection("openDates")->filterBy('categories', 'tickets', ',');
 ?>
 
-<div class="modal fade" id="modalTickets" tabindex="-1" role="dialog" aria-labelledby="modalTicketsTitle"
+<div class="modal fade text-center" id="modalTickets" tabindex="-1" role="dialog" aria-labelledby="modalTicketsTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
     <div class="modal-content">
