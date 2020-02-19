@@ -1,0 +1,20 @@
+title: Termine
+preset: pages
+icon: 📅
+
+options:
+  url: false
+  status: false
+  delete: false
+
+drafts:
+  extends: sections/dates
+  headline: Entwürfe
+
+unlisted:
+  extends: sections/dates
+  headline: Ungelistete Termine
+
+listed:
+  extends: sections/dates
+  headline: Veröffentlichte Termine
