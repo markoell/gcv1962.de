@@ -1,6 +1,6 @@
 <?php 
-  $dates = $kirby->collection("dates");
-  $items = $dates->children()->listed()->filterBy('categories', 'tickets', ',');
+  $dates = $kirby->collection("datesOverview");
+  $items = $kirby->collection("openDates")->filterBy('categories', 'tickets', ',');
 ?>
 
 <div class="modal fade" id="modalTickets" tabindex="-1" role="dialog" aria-labelledby="modalTicketsTitle"

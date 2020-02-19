@@ -1,6 +1,7 @@
 <?php
-  $dates = $kirby->collection("dates");
-  $items = $dates->children()->listed();
+  $dates = $kirby->collection("datesOverview");
+  $items = $kirby->collection("openDates");
+  $topThemaPage = page('home/topthema');
 ?>
 
 
@@ -13,9 +14,9 @@
 </section>
 <?php endif ?>
 <!-- 2. TopThema anzeigen -->
-<?php if($next = page('home/TopThema')): ?>
-<div id="<?= $next->title()->html() ?>">
-  <?php snippet(strtolower($next->intendedTemplate()), array('data' => $next)) ?>
+<?php if($topThemaPage->exists() && $topThemaPage->isListed()): ?>
+<div id="<?= $topThemaPage->title()->html() ?>">
+  <?php snippet(strtolower($topThemaPage->intendedTemplate()), array('data' => $topThemaPage)) ?>
 </div>
 <?php endif ?>
 <!-- 3. Begrüßung Präsi anzeigen -->

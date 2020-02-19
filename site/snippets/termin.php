@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row align-items-center">
   <div class="col-2">
     <h4><span class="badge badge-secondary"><?= $item->date()->toDate('d') ?></span></h4>
     <h5><?= $item->date()->toDate('M - Y') ?></h5>
@@ -18,7 +18,7 @@
   </div>
   <?php if (in_array("tickets", $item->categories()->split())): ?>
   <div class="col-3">
-    <a href="<?= $item->link()->toUrl()?>" class="btn btn-outline-success py-auto">Karten kaufen</a>
+    <a href="<?= $item->link()->toUrl()?>" class="btn btn-outline-success">Karten kaufen</a>
   </div>
   <?php endif ?>
 </div>
