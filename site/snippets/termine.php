@@ -1,7 +1,7 @@
 <div class="container pt-2 pb-2">
   <?php
     // setlocale(LC_TIME, "de_DE");
-    setlocale(LC_TIME, 'de_DE@euro', 'de_DE', 'de', 'ge');
+    setlocale(LC_TIME, 'de_DE@euro', 'de_DE.utf8', 'de_DE', 'de', 'ge');
     $rand = html(Str::random(4))
   ?>
 
