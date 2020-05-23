@@ -39,15 +39,7 @@
           <?php endif //if($itemHaslistedChildren)?>
         </li>
         <?php endforeach //$kirby->collection("mainPages") ?>
-
-        
-
       </ul>
-      <div class="nav-item">
-          <?php snippet("nav/tickets") ?>
-        </div>
     </div>
   </div>
 </nav>
-
-<?php snippet("nav/ticketsModal") ?>
