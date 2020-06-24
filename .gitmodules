@@ -1,6 +1,6 @@
-[submodule "content"]
-	path = content
-	url = https://github.com/markoell/gcv1962.de-content.git
 [submodule "site/plugins/kirby-autoresize"]
 	path = site/plugins/kirby-autoresize
 	url = https://github.com/medienbaecker/kirby-autoresize.git
+[submodule "content"]
+	path = content
+	url = git@github.com:markoell/gcv1962.de-content.git
