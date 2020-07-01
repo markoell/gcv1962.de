@@ -60,10 +60,13 @@ site/cache/*
 *.7z
 
 #Exclude 3rdParty sources
-assets/vendors/
+assets/vendors/*
 site/plugins/
-!site/plugins/custom-tags/
 node_modules/
 sync.ffs_db
 sync.ffs_lock
 *.ffs_gui
+
+#still needed
+!assets/vendors/favicon_package_v0.16/
+!site/plugins/custom-tags/
