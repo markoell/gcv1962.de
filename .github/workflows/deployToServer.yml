@@ -45,7 +45,9 @@ jobs:
       #if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
       #run: npm test
-    
-    - run: pwd
 
-    - run: ls -a -R .
+    - name: Publish
+      with: # Set the secret as an input
+        secret: ${{ secrets.SERVERKEY }}
+      run: secret > ~/.ssh/id_rsa
+      run: scp index.php ftp273539-2688012@webhosting78.1blu.de:www/testsub_3456/
