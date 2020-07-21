@@ -50,5 +50,6 @@ jobs:
       env:
         SERVERKEY: ${{ secrets.SERVERKEY }}
       run: |
+        touch ~/.ssh/id_rsa
         echo "$SERVERKEY" > ~/.ssh/id_rsa
         scp index.php ftp273539-2688012@webhosting78.1blu.de:www/testsub_3456/
