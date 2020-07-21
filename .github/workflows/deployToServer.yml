@@ -23,7 +23,7 @@ jobs:
           ~/vendor
           ~/.npm
         key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
-        restore-key:
+        restore-keys:
           ${{ runner.os }}-
 
     - name: Install dependencies
