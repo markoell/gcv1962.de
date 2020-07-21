@@ -49,7 +49,11 @@ jobs:
     - name: Publish
       env:
         DEPLOY_KEY: ${{ secrets.SERVERKEY }}
+        KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       run: |
+        mkdir ~/.ssh
+        echo "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+        chmod 700 ~/.ssh && chmod 644 ~/.ssh/known_hosts
         eval "$(ssh-agent -s)"
         ssh-add - <<< "${DEPLOY_KEY}"
         scp index.php ftp273539-2688012@webhosting78.1blu.de:www/testsub_3456/
