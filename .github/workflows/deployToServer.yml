@@ -47,8 +47,8 @@ jobs:
       #run: npm test
 
     - name: Publish
-    env:
-      SERVERKEY: ${{ secrets.SERVERKEY }}
-    run: |
-      echo "$SERVERKEY" > ~/.ssh/id_rsa
-      scp index.php ftp273539-2688012@webhosting78.1blu.de:www/testsub_3456/
+      env:
+        SERVERKEY: ${{ secrets.SERVERKEY }}
+      run: |
+        echo "$SERVERKEY" > ~/.ssh/id_rsa
+        scp index.php ftp273539-2688012@webhosting78.1blu.de:www/testsub_3456/
