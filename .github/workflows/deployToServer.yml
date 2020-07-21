@@ -23,6 +23,8 @@ jobs:
           ~/vendor
           ~/.npm
         key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+        restore-key:
+          ${{ runner.os }}-
 
     - name: Install dependencies
       if: steps.cache.outputs.cache-hit != 'true'
@@ -42,3 +44,7 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
       #run: npm test
+    
+    - run: pwd
+
+    - run: ls
