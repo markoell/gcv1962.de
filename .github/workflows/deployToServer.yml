@@ -47,4 +47,4 @@ jobs:
     
     - run: pwd
 
-    - run: ls
+    - run: ls -a
