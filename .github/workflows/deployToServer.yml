@@ -56,4 +56,4 @@ jobs:
         chmod 700 ~/.ssh && chmod 644 ~/.ssh/known_hosts
         eval "$(ssh-agent -s)"
         ssh-add - <<< "${DEPLOY_KEY}"
-        scp index.php ftp273539-2688012@webhosting78.1blu.de:www/testsub_3456/
+        scp ./ ftp273539-2688012@webhosting78.1blu.de:www/testsub_3456/
