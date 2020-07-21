@@ -15,17 +15,17 @@ jobs:
     - name: Validate composer.json and composer.lock
       run: composer validate
       
-    # - name: Cache packages
-    #   id: cache
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: |
-    #       ~/vendor
-    #       ~/.npm
-    #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+    - name: Cache packages
+      id: cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/vendor
+          ~/.npm
+        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
     - name: Install dependencies
-      #if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.cache.outputs.cache-hit != 'true'
       run: composer install --prefer-dist --no-progress --no-suggest
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
@@ -34,12 +34,11 @@ jobs:
     # - name: Run test suite
     #   run: composer run-script test
     - name: Setup Node
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v1
       with:
         node-version: '12'
-        check-latest: true
 
     - name: npm install
-      #if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
       #run: npm test
