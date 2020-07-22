@@ -8,7 +8,8 @@ jobs:
   webpage-build:
 
     runs-on: ubuntu-latest
-
+    env:
+        TARGET_DIR: gcv1962_${{ GITHUB_RUN_ID }}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -49,9 +50,10 @@ jobs:
       run: npm install
       #run: npm test
 
-    - run: |
-        ls -a
-        ls -a content
+    - name: Copy
+      run: |
+        mkdir "${TARGET_DIR}"
+        rsync -av --exclude-from=deploy/dev/rsync.ignore --exclude "${TARGET_DIR}" . "${TARGET_DIR}"\
       
     - name: Publish
       env:
@@ -63,4 +65,4 @@ jobs:
         chmod 700 ~/.ssh && chmod 644 ~/.ssh/known_hosts
         eval "$(ssh-agent -s)"
         ssh-add - <<< "${DEPLOY_KEY}"
-        scp -C -r site ftp273539-2688012@webhosting78.1blu.de:www/testsub_34567/
+        scp -C -r "${TARGET_DIR}" ftp273539-2688012@webhosting78.1blu.de:www/"${TARGET_DIR}"
