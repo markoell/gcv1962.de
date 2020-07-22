@@ -1,0 +1,29 @@
+# Exclude account information
+site/accounts/*
+!site/accounts/index.html
+assets/avatars/*
+!assets/avatars/.gitkeep
+
+# Exclude thumbnails
+thumbs/*
+!thumbs/index.html
+
+# Exclude cache
+site/cache/*
+!site/cache/index.html
+
+#exclude license files
+/site/config/.license
+
+#additional excludes
+/media/
+/site/accounts
+/site/sessions
+/scripts/
+
+composer.*
+
+.*
+*.md
+LICENSE
+*.json
