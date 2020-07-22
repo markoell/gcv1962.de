@@ -9,7 +9,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-        TARGET_DIR: gcv1962_${{ GITHUB_RUN_ID }}
+        TARGET_DIR: "gcv1962_${{ github.GITHUB_RUN_ID }}"
     steps:
     - uses: actions/checkout@v2
       with:
