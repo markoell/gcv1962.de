@@ -52,7 +52,7 @@ jobs:
 
     - name: Copy
       env:
-        TEST: ${{ GITHUB_RUN_ID }}
+        TEST: ${{ githu.GITHUB_RUN_ID }}
       run: |
         mkdir "${TARGET_DIR_PREFIX}${GITHUB_RUN_ID}"
         rsync -av --exclude-from=deploy/dev/rsync.ignore --exclude "${TARGET_DIR_PREFIX}${GITHUB_RUN_ID}" . "${TARGET_DIR_PREFIX}${GITHUB_RUN_ID}"\
