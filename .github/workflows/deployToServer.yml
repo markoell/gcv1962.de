@@ -9,7 +9,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-        TARGET_DIR: "${{ github.repository }}_{{ github.sha }}"
+        TARGET_DIR: ${{ github.repository }}_${{ github.sha }}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -54,8 +54,8 @@ jobs:
       env:
         TEST: ${{ github.GITHUB_RUN_ID }}
       run: |
-        mkdir "${TARGET_DIR_PREFIX}${GITHUB_RUN_ID}"
-        rsync -av --exclude-from=deploy/dev/rsync.ignore --exclude "${TARGET_DIR_PREFIX}${GITHUB_RUN_ID}" . "${TARGET_DIR_PREFIX}${GITHUB_RUN_ID}"\
+        mkdir "${TARGET_DIR}"
+        rsync -av --exclude-from=deploy/dev/rsync.ignore --exclude "${TARGET_DIR}" . "${TARGET_DIR}"\
       
     - name: Publish
       env:
@@ -67,4 +67,5 @@ jobs:
         chmod 700 ~/.ssh && chmod 644 ~/.ssh/known_hosts
         eval "$(ssh-agent -s)"
         ssh-add - <<< "${DEPLOY_KEY}"
-        scp -r "${TARGET_DIR_PREFIX}${GITHUB_RUN_ID}" ftp273539-2688012@webhosting78.1blu.de:www/"${TARGET_DIR_PREFIX}${GITHUB_RUN_ID}"
+        rsync -a "${TARGET_DIR}" -e ssh ftp273539-2688012@webhosting78.1blu.de:www/"${TARGET_DIR}"  
+        #scp -r "${TARGET_DIR}" ftp273539-2688012@webhosting78.1blu.de:www/"${TARGET_DIR}"
