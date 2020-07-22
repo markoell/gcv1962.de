@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        submodules: 'recursive'
+        submodules: 'true'
 
     - name: Validate composer.json and composer.lock
       run: composer validate
