@@ -1,29 +1,34 @@
 # Exclude account information
 site/accounts/*
-!site/accounts/index.html
+-/site/accounts/index.html
 assets/avatars/*
-!assets/avatars/.gitkeep
+-/assets/avatars/.gitkeep
 
 # Exclude thumbnails
-thumbs/*
-!thumbs/index.html
+/thumbs/*
+-/thumbs/index.html
 
 # Exclude cache
-site/cache/*
-!site/cache/index.html
+/site/cache/*
+-/site/cache/index.html
 
 #exclude license files
 /site/config/.license
 
 #additional excludes
 /media/
-/site/accounts
-/site/sessions
+/site/accounts/
+/site/sessions/
 /scripts/
+/node_modules/
+/content/
+/deploy/
 
 composer.*
 
-.*
-*.md
-LICENSE
+**.git*
+**.vscode
+**.md
+**/LICENSE
 *.json
+*.code-workspace
