@@ -61,11 +61,6 @@ jobs:
       env:
         DEPLOY_KEY: ${{ secrets.SERVERKEY }}
         KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
-      run: |
-        mkdir ~/.ssh
-        echo "$KNOWN_HOSTS" > ~/.ssh/known_hosts
-        chmod 700 ~/.ssh && chmod 644 ~/.ssh/known_hosts
-        eval "$(ssh-agent -s)"
-        ssh-add - <<< "${DEPLOY_KEY}"
-        rsync -a "${TARGET_DIR}" -e ssh ftp273539-2688012@webhosting78.1blu.de:~/www/test_234/  
-        #scp -r "${TARGET_DIR}" ftp273539-2688012@webhosting78.1blu.de:~/www/test_234/
+        BRANCH: ${{ github.ref }}
+      run: scripts/Linux/server_publish.sh "${BRANCH}_TARGETCONNECTION" "${TARGET_DIR}" "${DEPLOY_KEY}" "${KNOWN_HOSTS}"
+        
