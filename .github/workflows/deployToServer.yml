@@ -55,7 +55,7 @@ jobs:
         TEST: ${{ github.GITHUB_RUN_ID }}
       run: |
         mkdir -p "${TARGET_DIR}"
-        rsync -av --exclude-from=deploy/dev/rsync.ignore --exclude "${TARGET_DIR}" . "${TARGET_DIR}"\
+        rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "${TARGET_DIR}" . "${TARGET_DIR}"\
       
     - name: Publish
       env:
