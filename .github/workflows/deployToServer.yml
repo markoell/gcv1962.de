@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
         BUILD_DIR: ${{ github.repository }}_${{ github.run_number }}
+        PRODUCTION_BRANCH: master
+        DEVELOPMENT:BRANCH: continious_delivery
+
     steps:
     - uses: actions/checkout@v2
       with:
@@ -60,11 +63,22 @@ jobs:
         parametername=${GITHUB_REF#refs/heads/}_TARGETCONNECTION
         echo "::set-output name=branch::${parametername^^}"
         
+    - name: Set production path
+      env:
+        SECRET: ${{ secrets.CONTINOUS_DELIVERY_TARGETCONNECTION }}
+      if: ${{ steps.extract_branch.outputs.branch == env.PRODUCTION_BRANCH }}
+      run: echo "::set-env name=CONNECTION::${SECRET}"
+
+    - name: Set development path
+      env:
+        SECRET: ${{ secrets.CONTINOUS_DELIVERY_TARGETCONNECTION }}
+      if: ${{ steps.extract_branch.outputs.branch == env.DEVELOPMENT_BRANCH }}
+      run: echo "::set-env name=CONNECTION::${SECRET}"
+
     - name: Publish
       env:
         DEPLOY_KEY: ${{ secrets.SERVERKEY }}
         KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
-        BRANCH: ${{ secrets["steps.extract_branch.outputs.branch"] }}
-      run: echo $BRANCH
+      run: echo $CONNECTION
       #run: scripts/Linux/server_publish.sh "${BRANCH}_TARGETCONNECTION" "${BUILD_DIR}" "${DEPLOY_KEY}" "${KNOWN_HOSTS}"
         
