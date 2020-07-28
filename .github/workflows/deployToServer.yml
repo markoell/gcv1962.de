@@ -64,7 +64,7 @@ jobs:
       env:
         DEPLOY_KEY: ${{ secrets.SERVERKEY }}
         KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
-        BRANCH: ${{ steps.extract_branch.outputs.branch }}
+        BRANCH: ${{ secrets["steps.extract_branch.outputs.branch"] }}
       run: echo $BRANCH
       #run: scripts/Linux/server_publish.sh "${BRANCH}_TARGETCONNECTION" "${BUILD_DIR}" "${DEPLOY_KEY}" "${KNOWN_HOSTS}"
         
