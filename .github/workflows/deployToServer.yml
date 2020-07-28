@@ -56,8 +56,9 @@ jobs:
         rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "${BUILD_DIR}" . "${BUILD_DIR}"\
     - name: Get target connection
       id: extract_branch
+      shell: bash
       run: |
-        echo '::set-output name=branch::${GITHUB_REF#refs/heads/}'
+        echo '##[set-output name=branch;]${GITHUB_REF#refs/heads/}'
         
     - name: Publish
       env:
