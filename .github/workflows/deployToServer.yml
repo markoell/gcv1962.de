@@ -58,7 +58,7 @@ jobs:
       id: extract_branch
       shell: bash
       run: |
-        echo ${GUTHUB_REF}
+        echo ${GITHUB_REF}
         echo '##[set-output name=branch;]${GITHUB_REF#refs/heads/}'
         
     - name: Publish
