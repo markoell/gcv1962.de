@@ -9,7 +9,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-        TARGET_DIR: ${{ github.repository }}_${{ github.sha }}
+        BUILD_DIR: ${{ github.repository }}_${{ github.run_number }}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -51,16 +51,19 @@ jobs:
       #run: npm test
 
     - name: Copy
-      env:
-        TEST: ${{ github.GITHUB_RUN_ID }}
       run: |
-        mkdir -p "${TARGET_DIR}"
-        rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "${TARGET_DIR}" . "${TARGET_DIR}"\
-      
+        mkdir -p "${BUILD_DIR}"
+        rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "${BUILD_DIR}" . "${BUILD_DIR}"\
+    - name: Get target connection
+      id: extract_branch
+      run: |
+        echo '::set-output name=branch::${GITHUB_REF#refs/heads/}'
+        
     - name: Publish
       env:
         DEPLOY_KEY: ${{ secrets.SERVERKEY }}
         KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
-        BRANCH: ${{ github.ref }}
-      run: scripts/Linux/server_publish.sh "${BRANCH}_TARGETCONNECTION" "${TARGET_DIR}" "${DEPLOY_KEY}" "${KNOWN_HOSTS}"
+        BRANCH: ${{ steps.extract_branch.outputs.branch }}
+      run: echo $BRANCH
+      #run: scripts/Linux/server_publish.sh "${BRANCH}_TARGETCONNECTION" "${BUILD_DIR}" "${DEPLOY_KEY}" "${KNOWN_HOSTS}"
         
