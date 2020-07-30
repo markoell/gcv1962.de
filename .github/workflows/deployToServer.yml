@@ -76,8 +76,7 @@ jobs:
 
     - name: Publish
       env:
-        DEPLOY_KEY: ${{ secrets.SERVERKEY }}
+        SERVERKEY: ${{ secrets.SERVERKEY }}
         KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
-      run: echo "${CONNECTION}"
-      #run: scripts/Linux/server_publish.sh "${BRANCH}_TARGETCONNECTION" "${BUILD_DIR}" "${DEPLOY_KEY}" "${KNOWN_HOSTS}"
+      run: scripts/Linux/server_publish.sh "${CONNECTION}" "${BUILD_DIR}" "${SERVERKEY}" "${KNOWN_HOSTS}"
         
