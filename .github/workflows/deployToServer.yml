@@ -60,17 +60,12 @@ jobs:
     
     - name: Extract branch id
       id: extract_branch
-      run: |
-        parametername=${GITHUB_REF#refs/heads/}_TARGETCONNECTION
-        echo "::set-output name=branch::${parametername^^}"
-
-    - name: Test Set
-      run: echo "${{ steps.extract_branch.outputs.branch }}"
-        
+      run: echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
+    
     - name: Set production path
       env:
         SECRET: ${{ secrets.CONTINOUS_DELIVERY_TARGETCONNECTION }}
-      if: steps.extract_branch.outputs.branch == 'master'
+      if: steps.extract_branch.outputs.branch == env.PRODUCTION_BRANCH
       run: echo "::set-env name=CONNECTION::${SECRET}"
 
     - name: Set development path
