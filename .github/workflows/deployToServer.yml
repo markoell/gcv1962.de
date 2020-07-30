@@ -9,7 +9,6 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-        BUILD_DIR: ${{ github.repository }}_${{ github.run_number }}
         PRODUCTION_BRANCH: master
         DEVELOPMENT_BRANCH: continious_delivery
 
@@ -53,9 +52,13 @@ jobs:
       run: npm install
       #run: npm test
 
+    - name: Set build build directory
+      env:
+        BUILD_DIR: ${{ github.repository }}_${{ github.run_number }}
+      run: echo "::set-env name=BUILD_DIR::${BUILD_DIR#${{ github.repository_owner }}}"
     - name: Copy
       run: |
-        mkdir -p "${BUILD_DIR}"
+        mkdir -p "${BUILD_DIR}" && \
         rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "${BUILD_DIR}" . "${BUILD_DIR}"\
     
     - name: Extract branch id
