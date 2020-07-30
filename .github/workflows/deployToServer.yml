@@ -64,13 +64,13 @@ jobs:
     
     - name: Set production path
       env:
-        SECRET: ${{ secrets.CONTINOUS_DELIVERY_TARGETCONNECTION }}
+        SECRET: ${{ secrets.DEVELOPMENT_CONNECTION }}
       if: steps.extract_branch.outputs.branch == env.PRODUCTION_BRANCH
       run: echo "::set-env name=CONNECTION::${SECRET}"
 
     - name: Set development path
       env:
-        SECRET: ${{ secrets.CONTINOUS_DELIVERY_TARGETCONNECTION }}
+        SECRET: ${{ secrets.DEVELOPMENT_CONNECTION }}
       if: steps.extract_branch.outputs.branch == env.DEVELOPMENT_BRANCH
       run: echo "::set-env name=CONNECTION::${SECRET}"
 
