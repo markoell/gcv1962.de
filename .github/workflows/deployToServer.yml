@@ -65,7 +65,7 @@ jobs:
         echo "::set-output name=branch::${parametername^^}"
 
     - name: Test Set
-      run: echo ${{ steps.extract_branch.outputs.branch }}
+      run: echo "${{ steps.extract_branch.outputs.branch }}"
         
     - name: Set production path
       env:
