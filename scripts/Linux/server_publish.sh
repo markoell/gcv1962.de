@@ -11,5 +11,5 @@ echo "$4" > ~/.ssh/known_hosts
 chmod 700 ~/.ssh && chmod 644 ~/.ssh/known_hosts
 eval "$(ssh-agent -s)"
 ssh-add - <<< "$3"
-echo 'rsync -a "$2" -e ssh "$1"' # {USER}@{HOST}:{PATH}
+rsync -a "$2" -e ssh "$1" # {USER}@{HOST}:{PATH}
 echo "ssh {$1:HOST} 'rm {$1:PATH}; {$1:PARENT/$2} {$1:PATH}'"
