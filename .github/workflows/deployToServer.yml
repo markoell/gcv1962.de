@@ -13,7 +13,12 @@ jobs:
         DEVELOPMENT_BRANCH: continious_delivery
 
     steps:
-    - uses: actions/checkout@v2
+      
+      #################
+      # Prepare
+      #################
+
+      - uses: actions/checkout@v2
       with:
         token: ${{ secrets.CONTENTTOKEN }}
         submodules: 'true'
@@ -51,6 +56,10 @@ jobs:
       #if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
       #run: npm test
+
+      #################
+      # Copy
+      #################
 
     - name: Set build build directory
       env:
