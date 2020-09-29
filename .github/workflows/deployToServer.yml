@@ -13,8 +13,8 @@ jobs:
         DEVELOPMENT_BRANCH: continious_delivery
 
     steps:
-      - uses: actions/checkout@v2
-        with:
+    - uses: actions/checkout@v2
+      with:
           token: ${{ secrets.CONTENTTOKEN }}
           submodules: 'true'
 
