@@ -13,15 +13,14 @@ jobs:
         DEVELOPMENT_BRANCH: continious_delivery
 
     steps:
-      
-      #################
-      # Prepare
-      #################
-
       - uses: actions/checkout@v2
       with:
         token: ${{ secrets.CONTENTTOKEN }}
         submodules: 'true'
+
+      #################
+      # Prepare
+      #################
 
     - name: Validate composer.json and composer.lock
       run: composer validate
@@ -70,22 +69,6 @@ jobs:
       run: |
         mkdir -p "${BUILD_DIR}" && \
         rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "${BUILD_DIR}" . "${BUILD_DIR}"\
-    
-    - name: Extract branch id
-      id: extract_branch
-      run: echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
-    
-    - name: Set production path
-      env:
-        SECRET: ${{ secrets.DEVELOPMENT_CONNECTION }}
-      if: steps.extract_branch.outputs.branch == env.PRODUCTION_BRANCH
-      run: echo "::set-env name=CONNECTION::${SECRET}"
-
-    - name: Set development path
-      env:
-        SECRET: ${{ secrets.DEVELOPMENT_CONNECTION }}
-      if: steps.extract_branch.outputs.branch == env.DEVELOPMENT_BRANCH
-      run: echo "::set-env name=CONNECTION::${SECRET}"
 
     - name: Publish
       env:
