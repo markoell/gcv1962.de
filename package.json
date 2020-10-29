@@ -4,9 +4,9 @@
   "description": "Website project for www.gcv1962.de",
   "main": "kirby/index.php",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.1",
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "animate.css": "^3.7.2",
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^4.5.3",
     "cookieconsent": "^3.1.1",
     "jquery": "^3.5.1",
     "photoswipe": "^4.1.3",
