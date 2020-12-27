@@ -69,10 +69,10 @@ jobs:
     #     rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "${BUILD_DIR}" . "${BUILD_DIR}"\
 
     - name: Upload result for deploy
-        uses: actions/upload-artifact@v2
-        with:
-          name: publish
-          path: *
+      uses: actions/upload-artifact@v2
+      with:
+        name: publish
+        path: *
         
   deploy:
 
