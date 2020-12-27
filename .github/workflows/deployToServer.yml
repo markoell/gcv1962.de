@@ -84,8 +84,8 @@ jobs:
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
         TARGET: ${{ secrets.REMOTE_TARGET }}
 
-      - name: Publish
-      env:
-        SERVERKEY: ${{ secrets.SERVERKEY }}
-        KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
-      run: scripts/Linux/server_publish.sh "${CONNECTION}" "${BUILD_DIR}" "${SERVERKEY}" "${KNOWN_HOSTS}"
+    # - name: Publish
+    #   env:
+    #     SERVERKEY: ${{ secrets.SERVERKEY }}
+    #     KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
+    #   run: scripts/Linux/server_publish.sh "${CONNECTION}" "${BUILD_DIR}" "${SERVERKEY}" "${KNOWN_HOSTS}"
