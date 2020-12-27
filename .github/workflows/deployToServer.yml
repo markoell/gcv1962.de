@@ -5,7 +5,7 @@ on:
     branches: [ continious_delivery ]
 
 jobs:
-  webpage-build:
+  build:
 
     runs-on: ubuntu-latest
     environment: test_environment
@@ -69,10 +69,10 @@ jobs:
     #     rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "${BUILD_DIR}" . "${BUILD_DIR}"\
 
         
-  webpage-deploy:
+  deploy:
 
     runs-on: ubuntu-latest
-    
+    needs: build
     steps:
     - name: Deploy to Staging server
       uses: easingthemes/ssh-deploy@v2.1.5
