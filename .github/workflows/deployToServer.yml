@@ -68,6 +68,11 @@ jobs:
     #     mkdir -p "${BUILD_DIR}" && \
     #     rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "${BUILD_DIR}" . "${BUILD_DIR}"\
 
+    - name: Upload result for deploy
+        uses: actions/upload-artifact@v2
+        with:
+          name: publish
+          path: *
         
   deploy:
 
@@ -76,12 +81,18 @@ jobs:
     environment: test_environment
 
     steps:
+    - name: Download result from build
+      uses: actions/download-artifact@v2
+      with:
+        name: publish
+        path: dist
+
     - name: Deploy to Staging server
       uses: easingthemes/ssh-deploy@v2.1.5
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         ARGS: "-rltgoDzvO --exclude-from=scripts/Linux/rsync.ignore"
-        #SOURCE: "dist/"
+        SOURCE: "dist/"
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
         TARGET: ${{ secrets.REMOTE_TARGET }}
