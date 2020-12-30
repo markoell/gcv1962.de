@@ -86,6 +86,12 @@ jobs:
         name: publish
         path: publish
 
+    -name: bla
+      env:
+        TARGET_PATH: ${{ secrets.REMOTE_TARGET }}
+      run: |
+        echo "TMP_TARGET=${TARGET_PATH}_tmp" >> $GITHUB_ENV
+
     - name: Deploy to Staging server
       uses: easingthemes/ssh-deploy@v2.1.5
       env:
@@ -94,7 +100,7 @@ jobs:
         SOURCE: "publish/"
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        TARGET: format('{0}_tmp', ${{ secrets.REMOTE_TARGET }})
+        TARGET: $TMP_TARGET
 
     # - name: Publish
     #   env:
