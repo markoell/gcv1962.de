@@ -9,7 +9,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      BUILD_DIR: build_${{ github.run_id }}
+      BUILD_DIR: ${{ github.run_id }}
 
 
     steps:
@@ -75,7 +75,7 @@ jobs:
       with:
         name: publish
         path: ${BUILD_DIR}
-        
+
   deploy:
 
     runs-on: ubuntu-latest
