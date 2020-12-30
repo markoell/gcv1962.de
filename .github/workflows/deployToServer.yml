@@ -90,7 +90,7 @@ jobs:
       env:
         TARGET_PATH: ${{ secrets.REMOTE_TARGET }}
       run: |
-        echo "TARGET=${TARGET_PATH}_tmp" >> $GITHUB_ENV
+        echo "TARGET=${TARGET_PATH%/}_tmp" >> $GITHUB_ENV
 
     - name: Deploy to Staging server
       uses: easingthemes/ssh-deploy@v2.1.5
