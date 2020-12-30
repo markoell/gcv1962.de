@@ -79,7 +79,7 @@ jobs:
     # needs: build
     environment: test_environment
 
-    # steps:
+    steps:
     # - name: Download result from build
     #   uses: actions/download-artifact@v2
     #   with:
