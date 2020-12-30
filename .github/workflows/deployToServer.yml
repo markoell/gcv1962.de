@@ -67,6 +67,7 @@ jobs:
 
     - name: Copy
       run: |
+        echo "Folder $BUILD_DIR"
         mkdir -p "$BUILD_DIR" && \
         rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "$BUILD_DIR" . "$BUILD_DIR"\
 
