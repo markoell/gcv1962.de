@@ -86,7 +86,7 @@ jobs:
         name: publish
         path: publish
 
-    -name: bla
+    - name: Set temporary remote target path
       env:
         TARGET_PATH: ${{ secrets.REMOTE_TARGET }}
       run: |
