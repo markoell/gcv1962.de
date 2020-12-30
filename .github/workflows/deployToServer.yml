@@ -8,9 +8,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-      BUILD_DIR: ${{ github.run_id }}
-
 
     steps:
     - uses: actions/checkout@v2
@@ -67,14 +64,14 @@ jobs:
 
     - name: Copy
       run: |
-        mkdir -p "$BUILD_DIR" && \
-        rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "$BUILD_DIR" . "$BUILD_DIR"\
+        mkdir -p publish && \
+        rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude publish . publish\
 
     - name: Upload result for deploy
       uses: actions/upload-artifact@v2
       with:
         name: publish
-        path: ${{ $BUILD_DIR }}
+        path: publish
 
   deploy:
 
