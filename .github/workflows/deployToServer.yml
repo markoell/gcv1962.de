@@ -66,6 +66,8 @@ jobs:
     #   run: echo "::set-env name=BUILD_DIR::${BUILD_DIR#${{ github.repository_owner }}/}"
 
     - name: Copy
+      env:
+        BUILD_DIR: "Test"
       run: |
         echo "Folder $BUILD_DIR"
         mkdir -p "$BUILD_DIR" && \
