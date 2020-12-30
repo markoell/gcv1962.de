@@ -8,7 +8,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    #environment: test_environment
+    env:
+      BUILD_DIR: build_${{ github.run_id }}
+
 
     steps:
     - uses: actions/checkout@v2
@@ -63,16 +65,16 @@ jobs:
     #     BUILD_DIR: ${{ github.repository }}_${{ github.run_number }}
     #   run: echo "::set-env name=BUILD_DIR::${BUILD_DIR#${{ github.repository_owner }}/}"
 
-    # - name: Copy
-    #   run: |
-    #     mkdir -p "${BUILD_DIR}" && \
-    #     rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "${BUILD_DIR}" . "${BUILD_DIR}"\
+    - name: Copy
+      run: |
+        mkdir -p "${BUILD_DIR}" && \
+        rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "${BUILD_DIR}" . "${BUILD_DIR}"\
 
     - name: Upload result for deploy
       uses: actions/upload-artifact@v2
       with:
         name: publish
-        path: ${{ github.workspace }}
+        path: ${BUILD_DIR}
         
   deploy:
 
