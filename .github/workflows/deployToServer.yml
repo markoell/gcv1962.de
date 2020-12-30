@@ -100,7 +100,7 @@ jobs:
         SOURCE: "publish/"
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        TARGET: $TMP_TARGET
+        TARGET: "$TMP_TARGET"
 
     # - name: Publish
     #   env:
