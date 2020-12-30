@@ -10,81 +10,81 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-          token: ${{ secrets.CONTENTTOKEN }}
-          submodules: 'true'
+    # - uses: actions/checkout@v2
+    #   with:
+    #       token: ${{ secrets.CONTENTTOKEN }}
+    #       submodules: 'true'
 
-      #################
-      # Prepare
-      #################
+    #   #################
+    #   # Prepare
+    #   #################
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate
+    # - name: Validate composer.json and composer.lock
+    #   run: composer validate
       
-    - name: Cache packages
-      id: cache
-      uses: actions/cache@v2
-      with:
-        path: |
-          ./kirby
-          ./vendor
-          ~/.npm
-        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
-        restore-keys:
-          ${{ runner.os }}-
+    # - name: Cache packages
+    #   id: cache
+    #   uses: actions/cache@v2
+    #   with:
+    #     path: |
+    #       ./kirby
+    #       ./vendor
+    #       ~/.npm
+    #     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+    #     restore-keys:
+    #       ${{ runner.os }}-
 
-    - name: composer install
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: composer install --prefer-dist --no-progress --no-suggest
+    # - name: composer install
+    #   if: steps.cache.outputs.cache-hit != 'true'
+    #   run: composer install --prefer-dist --no-progress --no-suggest
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
+    # # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
+    # # Docs: https://getcomposer.org/doc/articles/scripts.md
 
-    # - name: Run test suite
-    #   run: composer run-script test
-    - name: Setup Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: '12'
+    # # - name: Run test suite
+    # #   run: composer run-script test
+    # - name: Setup Node
+    #   uses: actions/setup-node@v1
+    #   with:
+    #     node-version: '12'
 
-    - name: NPM
-      #if: steps.cache.outputs.cache-hit != 'true'
-      run: npm install
-      #run: npm test
+    # - name: NPM
+    #   #if: steps.cache.outputs.cache-hit != 'true'
+    #   run: npm install
+    #   #run: npm test
 
-      #################
-      # Copy
-      #################
+    #   #################
+    #   # Copy
+    #   #################
 
-    # - name: Set build build directory
-    #   env:
-    #     BUILD_DIR: ${{ github.repository }}_${{ github.run_number }}
-    #   run: echo "::set-env name=BUILD_DIR::${BUILD_DIR#${{ github.repository_owner }}/}"
+    # # - name: Set build build directory
+    # #   env:
+    # #     BUILD_DIR: ${{ github.repository }}_${{ github.run_number }}
+    # #   run: echo "::set-env name=BUILD_DIR::${BUILD_DIR#${{ github.repository_owner }}/}"
 
-    - name: Copy
-      run: |
-        mkdir -p publish && \
-        rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude publish . publish\
+    # - name: Copy
+    #   run: |
+    #     mkdir -p publish && \
+    #     rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude publish . publish\
 
-    - name: Upload result for deploy
-      uses: actions/upload-artifact@v2
-      with:
-        name: publish
-        path: publish
+    # - name: Upload result for deploy
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: publish
+    #     path: publish
 
   deploy:
 
     runs-on: ubuntu-latest
-    needs: build
+    # needs: build
     environment: test_environment
 
-    steps:
-    - name: Download result from build
-      uses: actions/download-artifact@v2
-      with:
-        name: publish
-        path: publish
+    # steps:
+    # - name: Download result from build
+    #   uses: actions/download-artifact@v2
+    #   with:
+    #     name: publish
+    #     path: publish
 
     - name: Set temporary remote target path
       env:
@@ -92,15 +92,19 @@ jobs:
       run: |
         echo "TMP_TARGET=${TARGET_PATH}_tmp" >> $GITHUB_ENV
 
-    - name: Deploy to Staging server
-      uses: easingthemes/ssh-deploy@v2.1.5
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        ARGS: "-rltgoDzvO"
-        SOURCE: "publish/"
-        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-        REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        TARGET: "$TMP_TARGET"
+    - name: Test
+      run: |
+        echo "$TMP_TARGET"
+
+    # - name: Deploy to Staging server
+    #   uses: easingthemes/ssh-deploy@v2.1.5
+    #   env:
+    #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+    #     ARGS: "-rltgoDzvO"
+    #     SOURCE: "publish/"
+    #     REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+    #     REMOTE_USER: ${{ secrets.REMOTE_USER }}
+    #     TARGET: "$TMP_TARGET"
 
     # - name: Publish
     #   env:
