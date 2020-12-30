@@ -67,14 +67,14 @@ jobs:
 
     - name: Copy
       run: |
-        mkdir -p "${BUILD_DIR}" && \
-        rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "${BUILD_DIR}" . "${BUILD_DIR}"\
+        mkdir -p "$BUILD_DIR" && \
+        rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude "$BUILD_DIR" . "$BUILD_DIR"\
 
     - name: Upload result for deploy
       uses: actions/upload-artifact@v2
       with:
         name: publish
-        path: ${BUILD_DIR}
+        path: $BUILD_DIR
 
   deploy:
 
