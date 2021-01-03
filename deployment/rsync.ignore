@@ -24,8 +24,6 @@ assets/avatars/*
 /content/
 /deployment/
 
-composer.*
-
 **.git*
 **.vscode
 **.md
