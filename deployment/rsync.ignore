@@ -22,7 +22,7 @@ assets/avatars/*
 /scripts/
 /node_modules/
 /content/
-/deploy/
+/deployment/
 
 composer.*
 

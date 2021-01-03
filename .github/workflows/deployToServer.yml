@@ -4,6 +4,10 @@ on:
   push:
     branches: [ continious_delivery ]
 
+env:
+  BLUE_GREEN_SCRIPT: deployment/blue_green.sh
+  TARGET_PATH: ${{ secrets.REMOTE_TARGET }}
+
 jobs:
   build:
 
@@ -14,10 +18,6 @@ jobs:
       with:
           token: ${{ secrets.CONTENTTOKEN }}
           submodules: 'true'
-
-      #################
-      # Prepare
-      #################
 
     - name: Validate composer.json and composer.lock
       run: composer validate
@@ -38,46 +38,36 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: composer install --prefer-dist --no-progress --no-suggest
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
-    # - name: Run test suite
-    #   run: composer run-script test
     - name: Setup Node
       uses: actions/setup-node@v1
       with:
         node-version: '12'
 
     - name: NPM
-      #if: steps.cache.outputs.cache-hit != 'true'
       run: npm install
-      #run: npm test
-
-      #################
-      # Copy
-      #################
-
-    # - name: Set build build directory
-    #   env:
-    #     BUILD_DIR: ${{ github.repository }}_${{ github.run_number }}
-    #   run: echo "::set-env name=BUILD_DIR::${BUILD_DIR#${{ github.repository_owner }}/}"
 
     - name: Copy
       run: |
         mkdir -p publish && \
-        rsync -av --exclude-from=scripts/Linux/rsync.ignore --exclude publish . publish\
+        rsync -av --exclude-from=deployment/rsync.ignore --exclude publish . publish/
 
     - name: Upload result for deploy
       uses: actions/upload-artifact@v2
       with:
         name: publish
-        path: publish
+        path: |
+          publish/
+          ${BLUE_GREEN_SCRIPT}
 
   deploy:
 
     runs-on: ubuntu-latest
     needs: build
     environment: test_environment
+
+    env:
+      REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+      REMOTE_USER: ${{ secrets.REMOTE_USER }}
 
     steps:
     - name: Download result from build
@@ -87,8 +77,6 @@ jobs:
         path: publish
 
     - name: Set temporary remote target path
-      env:
-        TARGET_PATH: ${{ secrets.REMOTE_TARGET }}      
       run: |
         echo "TARGET=${TARGET_PATH%/}_${GITHUB_RUN_ID}" >> $GITHUB_ENV
 
@@ -103,26 +91,8 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         ARGS: "-rltgoDzvO"
         SOURCE: "publish/"
-        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-        REMOTE_USER: ${{ secrets.REMOTE_USER }}
       run: rsync $ARGS --rsh ssh ${SOURCE} ${REMOTE_USER}@${REMOTE_HOST}:${TARGET}
 
-    # - name: Deploy to Staging server
-    #   uses: easingthemes/ssh-deploy@v2.1.5
-    #   env:
-    #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-    #     ARGS: "-rltgoDzvO"
-    #     SOURCE: "publish/"
-    #     REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-    #     REMOTE_USER: ${{ secrets.REMOTE_USER }}
-    
     - name: Switch Directory
-      run: |
-        npm ci
-        npm run build
-
-    # - name: Publish
-    #   env:
-    #     SERVERKEY: ${{ secrets.SERVERKEY }}
-    #     KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
-    #   run: scripts/Linux/server_publish.sh "${CONNECTION}" "${BUILD_DIR}" "${SERVERKEY}" "${KNOWN_HOSTS}"
+      run: ssh ${REMOTE_USER}@{REMOTE_HOST} '${BLUE_GREEN_SCRIPT} ${TARGET_PATH%/} ${TARGET}'
+  
