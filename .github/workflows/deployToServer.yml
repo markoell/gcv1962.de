@@ -57,7 +57,7 @@ jobs:
         name: publish
         path: |
           publish/
-          ${BLUE_GREEN_SCRIPT}
+          deployment/blue_green.sh
 
   deploy:
 
