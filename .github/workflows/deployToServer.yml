@@ -88,19 +88,38 @@ jobs:
 
     - name: Set temporary remote target path
       env:
-        TARGET_PATH: ${{ secrets.REMOTE_TARGET }}
+        TARGET_PATH: ${{ secrets.REMOTE_TARGET }}      
       run: |
-        echo "TARGET=${TARGET_PATH%/}_tmp" >> $GITHUB_ENV
+        echo "TARGET=${TARGET_PATH%/}_${GITHUB_RUN_ID}" >> $GITHUB_ENV
 
-    - name: Deploy to Staging server
-      uses: easingthemes/ssh-deploy@v2.1.5
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+
+    - name: Publish
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         ARGS: "-rltgoDzvO"
         SOURCE: "publish/"
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        # TARGET: "$TMP_TARGET"
+      run: rsync $ARGS --rsh ssh ${SOURCE} ${REMOTE_USER}@${REMOTE_HOST}:${TARGET}
+
+    # - name: Deploy to Staging server
+    #   uses: easingthemes/ssh-deploy@v2.1.5
+    #   env:
+    #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+    #     ARGS: "-rltgoDzvO"
+    #     SOURCE: "publish/"
+    #     REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+    #     REMOTE_USER: ${{ secrets.REMOTE_USER }}
+    
+    - name: Switch Directory
+      run: |
+        npm ci
+        npm run build
 
     # - name: Publish
     #   env:
