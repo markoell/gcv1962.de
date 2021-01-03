@@ -19,6 +19,7 @@ assets/avatars/*
 /media/
 /site/accounts/
 /site/sessions/
+/site/config/
 /scripts/
 /node_modules/
 /content/
