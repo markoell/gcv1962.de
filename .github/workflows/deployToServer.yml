@@ -94,5 +94,5 @@ jobs:
       run: rsync $ARGS --rsh ssh ${SOURCE} ${REMOTE_USER}@${REMOTE_HOST}:${TARGET}
 
     - name: Switch Directory
-      run: ssh ${REMOTE_USER}@{REMOTE_HOST} '${BLUE_GREEN_SCRIPT} ${TARGET_PATH%/} ${TARGET}'
+      run: ssh ${REMOTE_USER}@${REMOTE_HOST} 'sh ${BLUE_GREEN_SCRIPT} ${TARGET_PATH%/} ${TARGET}'
   
