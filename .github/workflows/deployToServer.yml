@@ -56,7 +56,7 @@ jobs:
       with:
         name: publish
         path: |
-          publish/
+          publish/*
           deployment/blue_green.sh
 
   deploy:
