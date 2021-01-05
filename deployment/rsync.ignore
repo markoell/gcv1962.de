@@ -31,3 +31,5 @@ assets/avatars/*
 **/LICENSE
 *.json
 *.code-workspace
+
+-**/composer.json
