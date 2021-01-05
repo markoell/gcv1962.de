@@ -4,10 +4,6 @@ on:
   push:
     branches: [ continious_delivery ]
 
-env:
-  BLUE_GREEN_SCRIPT: deployment/blue_green.sh
-  TARGET_PATH: ${{ secrets.REMOTE_TARGET }}
-
 jobs:
   build:
 
@@ -68,6 +64,7 @@ jobs:
     env:
       REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
       REMOTE_USER: ${{ secrets.REMOTE_USER }}
+      REMOTE_TARGET: ${{ secrets.REMOTE_TARGET }}
 
     steps:
     - name: Download result from build
@@ -78,7 +75,7 @@ jobs:
 
     - name: Set temporary remote target path
       run: |
-        echo "TARGET=${TARGET_PATH%/}_${GITHUB_RUN_ID}" >> $GITHUB_ENV
+        echo "TARGET=${REMOTE_TARGET%/}_${GITHUB_RUN_ID}" >> $GITHUB_ENV
 
     - name: Install SSH key
       uses: shimataro/ssh-key-action@v2
@@ -88,13 +85,10 @@ jobs:
 
     - name: Publish
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         ARGS: "-rltgoDzvO"
         SOURCE: "publish/"
       run: rsync $ARGS --rsh ssh ${SOURCE} ${REMOTE_USER}@${REMOTE_HOST}:${TARGET}
 
     - name: Switch Directory
-      env:
-        PUBLISH: "publish"
-      run: ssh ${REMOTE_USER}@${REMOTE_HOST} "sh ${TARGET}/${BLUE_GREEN_SCRIPT} ${TARGET_PATH%/} ${TARGET}/${PUBLISH}"
+      run: ssh ${REMOTE_USER}@${REMOTE_HOST} "sh ${TARGET}/deployment/blue_green.sh ${REMOTE_TARGET%/} ${TARGET}"
   
