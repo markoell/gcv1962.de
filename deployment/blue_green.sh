@@ -8,9 +8,9 @@ content=${4:-"content"}
 config=${5:-"site/config"}
 accounts=${6:-"site/accounts"}
 
-working_dir = dirname ${source_path}
-source_folder = basename ${source_path}
-target_folder = `basename ${target_path}`"/${subpath}"
+working_dir=dirname ${source_path}
+source_folder=basename ${source_path}
+target_folder=`basename ${target_path}`"/${subpath}"
 
 cd working_dir
 
