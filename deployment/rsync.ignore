@@ -29,7 +29,7 @@ assets/avatars/*
 **.vscode
 **.md
 **/LICENSE
-*.json
 *.code-workspace
 
--**/composer.json
+/package.json
+/package-lock.json
