@@ -1,8 +1,8 @@
-name: Deploy
+name: Deploy Staging
 
 on:
   push:
-    branches: [ continious_delivery ]
+    branches: [ staging ]
 
 jobs:
   build:
@@ -59,7 +59,7 @@ jobs:
 
     runs-on: ubuntu-latest
     needs: build
-    environment: test_environment
+    environment: staging_environment
 
     env:
       REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
