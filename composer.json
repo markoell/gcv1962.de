@@ -3,7 +3,7 @@
     "description": "Website project for \"Gundelsheimer Carneval-Verein 1962 e.V.\"",
     "type": "project",
     "require": {
-        "getkirby/cms": "^3.2",
+        "getkirby/cms": "^3.5",
         "bnomei/kirby3-fingerprint": "^3.0"
     },
     "config": {
