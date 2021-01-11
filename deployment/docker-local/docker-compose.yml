@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  
+  webserver:
+    build: ./
+    image: php:7.4-apache-rewrite
+    ports:
+      - "127.0.0.1:80:80"
+    volumes:
+      - ../../:/var/www/html
