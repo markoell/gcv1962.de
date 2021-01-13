@@ -25,6 +25,7 @@ assets/avatars/*
 /content/
 /deployment/
 
+.htaccess
 **.git*
 **.vscode
 **.md

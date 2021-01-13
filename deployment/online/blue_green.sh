@@ -14,6 +14,7 @@ target_folder=`basename ${target_path}`"/${subpath}"
 
 cd ${working_dir}
 
+rsync -a "${source_folder}/.htaccess" "${target_folder}/.htaccess"
 rsync -a "${source_folder}/${content}/" "${target_folder}/${content}/"
 rsync -a "${source_folder}/${config}/" "${target_folder}/${config}/"
 rsync -a "${source_folder}/${accounts}/" "${target_folder}/${accounts}/"
