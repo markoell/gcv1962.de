@@ -12,7 +12,7 @@ git submodule init && git submodule update
 composer install
 
 #install npm libraries
-npm install && /bin/bash ${script_path}/copy_npm_assets.sh
+npm install
 
 #create additional folder which need write access
 mkdir site/accounts/ && chmod o+w site/accounts
