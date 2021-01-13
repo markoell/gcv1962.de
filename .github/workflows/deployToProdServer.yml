@@ -52,7 +52,7 @@ jobs:
     - name: Copy
       run: |
         mkdir -p publish && \
-        rsync -av --exclude-from=deployment/rsync.ignore --exclude publish . publish/
+        rsync -av --exclude-from=deployment/online/rsync.ignore --exclude publish . publish/
 
     - name: Upload result for deploy
       uses: actions/upload-artifact@v2
@@ -60,7 +60,7 @@ jobs:
         name: publish
         path: |
           publish/*
-          deployment/blue_green.sh
+          deployment/online/blue_green.sh
 
   deploy:
 
@@ -97,5 +97,5 @@ jobs:
       run: rsync $ARGS --rsh ssh ${SOURCE} ${REMOTE_USER}@${REMOTE_HOST}:${TARGET}
 
     - name: Switch Directory
-      run: ssh ${REMOTE_USER}@${REMOTE_HOST} "sh ${TARGET}/deployment/blue_green.sh ${REMOTE_TARGET%/} ${TARGET}"
+      run: ssh ${REMOTE_USER}@${REMOTE_HOST} "sh ${TARGET}/deployment/online/blue_green.sh ${REMOTE_TARGET%/} ${TARGET}"
   
