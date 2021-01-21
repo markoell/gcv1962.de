@@ -1,40 +1,52 @@
 title:
     en: Royal Couple
     de: Prinzenpaar
-
-preset: page
 icon: 👑
 
 status:
   draft: true
   listed: true
 
-fields:
-  position:
-    label: Position
-    type: text
-  phone:
-    label: Phone
-    type: tel
-    width: 1/2
-  email:
-    label: Email
-    type: email
-    width: 1/2
-  account:
-    label: CMS Account
-    type: users
-  about:
-    label: About
-    type: textarea
-    size: medium
-
-sidebar:
-  image:
-    extends: sections/image
-    headline: Team Member
-    min: 1
-    max: 1
-    image:
-      ratio: 1/1
-      cover: true
+columns:
+  main:
+    width: 2/3
+    sections:
+      fields:
+        fields:
+          peerage:
+            label:
+              en: Peerage 
+              de: Titel
+            type: textarea
+            size: small
+            buttons:
+              - bold
+              - italic
+              - '|'
+              - email
+          names:
+            label: 
+              en: Civil Names
+              de: Bürgerl. Namen
+            type: textarea
+            size: small
+            buttons:
+              - bold
+              - italic
+              - '|'
+              - email
+  pictures:
+    width: 1/3
+    sections:
+      picture:
+        headline: 
+          en: Picture
+          de: Bild
+        info: "{{ file.dimensions }}"
+        image:
+          cover: true
+          ratio: 2/3
+        layout: cards
+        max: 1
+        type: files
+  
