@@ -34,7 +34,7 @@ sections:
       ratio: 2/3
     limit: 35
     status: listed
-    sortBy: year desc
+    sortBy: title desc
     templates: 
       - royal-couple
       - vcardl
