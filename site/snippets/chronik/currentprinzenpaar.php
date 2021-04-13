@@ -1,3 +1,4 @@
+<?php if($data != null): ?>
   <div class="col mb-4">
   <div class="card h-100" style="background-color: var(--bgcolor)">
     <h4 class="card-header">
@@ -16,3 +17,4 @@
     </div>
   </div>
 </div>
+<?php endif ?>

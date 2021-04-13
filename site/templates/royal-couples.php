@@ -4,21 +4,10 @@
   <h1><?php echo $page->title()->html() ?></h1>
   <div class="row">
     <?php 
-      $items = $kirby->collection('prinzenpaare');
-      $current = $items->first();  
+      dump($currentCouple);
     ?>
-    <?php snippet('chronik/currentprinzenpaar', array('data' => $current)) ?>
-    <div class="w-100"></div>
-    <?php $n = 0; foreach($items as $item):
-
-      $n++;
-      if($item == $current) {
-        continue;
-      } 
-
-      snippet('chronik/prinzenpaar', array('data' => $item));
-    
-    endforeach ?>
+    <?php snippet('chronik/currentprinzenpaar', array('data' => $currentCouple)) ?>
+    <?php snippet('chronik/previous-couples', array('data' => $items)) ?>
   </div>
 </div>
 
