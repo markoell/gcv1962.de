@@ -4,11 +4,11 @@
   "description": "Website project for www.gcv1962.de",
   "main": "kirby/index.php",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.1",
-    "animate.css": "^3.7.2",
-    "bootstrap": "^4.5.3",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^4.6.0",
     "cookieconsent": "^3.1.1",
-    "jquery": "^3.5.1",
+    "jquery": "^3.6.0",
     "photoswipe": "^4.1.3",
     "popper.js": "^1.16.1",
     "waypoints": "^4.0.1"

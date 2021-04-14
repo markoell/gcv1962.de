@@ -1,16 +1,7 @@
 <?php if($data != null): ?>
-
-<div class="w-100"></div>
-
-<?php $n = 0; foreach($data as $item):
-
-  $n++;
-  if($item == $current) {
-    continue;
-  } 
-
-  snippet('chronik/prinzenpaar', array('data' => $item));
-
-endforeach ?>
-
+  <?php foreach($data as $item): ?>
+    <div class="col mb-4">
+      <?php snippet('chronik/royal-couple', array('data' => $item)); ?>
+    </div>
+  <?php endforeach ?>
 <?php endif ?>

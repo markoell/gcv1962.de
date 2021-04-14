@@ -4,12 +4,16 @@ return function ($page) {
   
   $couples = $page->children()->listed()->sortBy('uid', 'desc');
 
-  $currentCouple = $couples->first();
-  $previousCouples = $couples->offset(1);
+  $firstCouple = $couples->first();
+  $secondCouple = $couples->nth(1);
+  $thirdCouple = $couples->nth(2);
+  $previousCouples = $couples->offset(3);
 
   return [
     
-    'currentCouple' => $currentCouple,
+    'firstCouple' => $firstCouple,
+    'secondCouple' => $secondCouple,
+    'thirdCouple' => $thirdCouple,
     'previousCouples' => $previousCouples
   ];
 };
