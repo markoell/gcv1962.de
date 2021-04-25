@@ -1,6 +1,6 @@
 <?php if($data != null): ?>
 
-  <div class="card text-success border-success">
+  <div class="card text-success">
     <div class="hovereffect">
       <?php if($data->hasImages()): ?>
         <img src="<?= $data->image()->resize(500)->url() ?>" alt="<?= $data->peerage()->kirbytext() ?>" class="card-img-top">
