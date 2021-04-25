@@ -23,6 +23,13 @@
   <?= Bnomei\Fingerprint::css('assets/css/gcv.css') ?>
   <?= Bnomei\Fingerprint::css('assets/css/gcv-media.css') ?>
   <?= Bnomei\Fingerprint::css('assets/css/gcv-ie.css') ?>
+
+  <?php if(isset($css) && !empty($css) && is_array($css)): ?>
+  <?php foreach($css as $asset): ?>
+    <?= Bnomei\Fingerprint::css('assets/css/' . $asset) ?>
+  <?php endforeach ?>
+  <?php endif ?>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     

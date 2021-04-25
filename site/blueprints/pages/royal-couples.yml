@@ -1,0 +1,41 @@
+title:
+    en: Royal Couples
+    de: Prinzenpaare
+
+icon: 👑
+
+headline:
+    en: "Overview of all {{ page.title }}"
+    de: "Übersicht aller {{ page.title }}"
+
+sections:
+
+  drafts:
+    headline: 
+      en: Drafts
+      de: Entwürfe
+    type: pages
+    info: "{{ page.year }}"
+    status: draft
+    templates: 
+      - royal-couple
+      - vcardl
+      - vcard2
+
+  published:
+    headline: 
+      en: Published Articles
+      de: Veröffentlichte Paare
+    type: pages
+    info: "{{ page.year }}"
+    layout: cards
+    image:
+      cover: true
+      ratio: 2/3
+    limit: 35
+    status: listed
+    sortBy: title desc
+    templates: 
+      - royal-couple
+      - vcardl
+      - vcard2
