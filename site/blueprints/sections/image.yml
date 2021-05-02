@@ -1,0 +1,7 @@
+type: files
+headline: 
+  en: Picture
+  de: Bild
+max: 1
+layout: cards
+info: "{{ file.dimensions }}"
