@@ -1,0 +1,95 @@
+title:
+  en: Honor
+  de: Ehrung
+
+icon: 🎖️
+
+status:
+  draft: Draft
+  listed: Published
+
+columns:
+  sidebar:
+    width: 1/4
+    sections:
+      picture:
+        headline: Cover
+        info: "{{ file.dimensions }}"
+        image:
+          cover: true
+          ratio: 2/3
+        layout: cards
+        max: 1
+        type: files
+
+  main:
+    width: 3/4
+    sections:
+      content:
+        type: fields
+        fields:
+          category:
+            label:
+              en: Category
+              de: Kategorie
+            type: select
+            required: true
+            placeholder: "Bitte auswählen!"
+            width: 1/3
+            options:
+              lwk: LWK
+              bdk: BDK
+              bw: "Baden Würthemberg"
+              internal: "Vereinsintern"
+
+          description:
+            label:
+              en: Description
+              de: Beschreibung
+            placeholder:
+              en: "Schort description of honoration for it's meaning or history"
+              de: "Eine kurze Beschreibung über dessen Bedeutung oder Geschichte"
+            type: textarea
+            size: medium
+            buttons:
+              - bold
+              - italic
+              - '|'
+              - link
+          
+          valued_members:
+            label: 
+              en: "Valued Members"
+              de: "Ausgezeichnete Mitglieder"
+            type: structure
+            sortBy: year desc
+            columns:
+              year:
+                width: 1/6
+                align: right
+              member:
+                width: 5/6
+            fields:
+              year:
+                label: 
+                  en: Year
+                  de: Jahr
+                type: text
+                placeholder: 
+                  en: "Year of honoration"
+                  de: "Jahr der Auszeichnung"
+                help:
+                  en: "Only numbers allowed (e.g.: 2000)"
+                  de: "Nur Jahreszahlen möglich (Bsp: 2000)"
+                pattern: "\d{4}"
+                counter: false
+                width: 1/4
+              member:
+                label: Name
+                type: text
+                placeholder: 
+                  en: "Name of honored member"
+                  de: "Name des ausgezeichneten Vereinsmitglieds"
+                minlength: 5
+                maxlength: 65
+            

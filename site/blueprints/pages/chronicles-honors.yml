@@ -1,0 +1,19 @@
+title: 
+  en: Honors
+  de: Ehrungen
+
+preset: pages
+icon: 🎖️
+
+drafts:
+  extends: sections/chronicles-honors
+  headline: 
+    en: Honors Drafts
+    de: Ehrungen Entwurf
+
+listed:
+  extends: sections/chronicles-honors
+  headline: 
+    en: Published Projects
+    de: Veröffentlichte Ehrungen
+  layout: cards
