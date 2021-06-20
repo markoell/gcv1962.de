@@ -4,7 +4,8 @@
     "type": "project",
     "require": {
         "getkirby/cms": "^3.5",
-        "bnomei/kirby3-fingerprint": "^3.0"
+        "bnomei/kirby3-fingerprint": "^3.0",
+        "distantnative/retour-for-kirby": "^3.0"
     },
     "config": {
         "optimize-autoloader": true

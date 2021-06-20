@@ -33,6 +33,7 @@ site/cache/*
 /media/
 /site/accounts
 /site/sessions
+/site/logs/
 /kirby/
 
 
