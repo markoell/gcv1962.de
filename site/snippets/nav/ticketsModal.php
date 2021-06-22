@@ -15,7 +15,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php snippet('termine', array('dates' => $items)) ?>
+        <?php snippet('termine', ['dates' => $items]) ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" data-dismiss="modal">Schließen</button>

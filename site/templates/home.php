@@ -6,25 +6,25 @@
 ?>
 
 
-<?php snippet('header', array('sticky' => false)) ?>
+<?php snippet('header', ['sticky' => false]) ?>
 
 <!-- 1. Bilder anzeigen -->
 <?php if($next = page('home/Titelbilder')): ?>
 <section id="<?= $next->title()->html() ?>">
-  <?php snippet(strtolower($next->intendedTemplate()), array('data' => $next)) ?>
+  <?php snippet(strtolower($next->intendedTemplate()), ['data' => $next]) ?>
 </section>
 <?php endif ?>
 <!-- 2. TopThema anzeigen -->
 <?php if($topThemaPage->exists() && $topThemaPage->isListed()): ?>
 <div id="<?= $topThemaPage->title()->html() ?>">
-  <?php snippet(strtolower($topThemaPage->intendedTemplate()), array('data' => $topThemaPage)) ?>
+  <?php snippet(strtolower($topThemaPage->intendedTemplate()), ['data' => $topThemaPage]) ?>
 </div>
 <?php endif ?>
 <!-- 3. Begrüßung Präsi anzeigen -->
 <?php if($next = page('home/Ansprache')): ?>
 <section id="Ansprache" class="js--section-speach">
   <div class="container mt-5">
-    <?php snippet(strtolower($next->intendedTemplate()), array('data' => $next)) ?>
+    <?php snippet(strtolower($next->intendedTemplate()), ['data' => $next]) ?>
   </div>
 </section>
 <?php endif ?>

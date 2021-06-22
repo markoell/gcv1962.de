@@ -9,6 +9,6 @@
 <?php //Unterseiten ?>
 <?php if($item->hasListedChildren()): ?>
   <?php foreach($item->children()->listed() as $child): ?>
-    <?php snippet('tools/kirbycontent', array('item' => $child))  ?>
+    <?php snippet('tools/kirbycontent', ['item' => $child])  ?>
   <?php endforeach // $item->children()->listed() ?>
 <?php endif // $item->hasListedChildren() ?>

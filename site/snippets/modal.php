@@ -14,7 +14,7 @@
             </button>
         </div>
         <div class="modal-body">
-            <?= snippet('tools/kirbycontent', array('item' => $item)); ?>
+            <?= snippet('tools/kirbycontent', ['item' => $item]); ?>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-success" data-dismiss="modal">Schließen</button>

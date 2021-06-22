@@ -67,7 +67,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php snippet('termine', array('dates' => $tmp->dates()->toStructure()->filterBy('targettext', 'Tickets'))) ?>
+        <?php snippet('termine', ['dates' => $tmp->dates()->toStructure()->filterBy('targettext', 'Tickets')]) ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" data-dismiss="modal">Schließen</button>

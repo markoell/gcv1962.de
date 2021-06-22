@@ -1,8 +1,8 @@
-<?php snippet('header', array('sticky' => true)) ?>
+<?php snippet('header', ['sticky' => true]) ?>
 
 <?php $n = 0; foreach($page->children()->visible() as $section): $n++; ?>
     <div id="<?= $section->uid() ?>" class="<?php e($n%2, 'even', 'odd') ?>">
-        <?php snippet(strtolower($section->intendedTemplate()), array('page' => $section)) ?>
+        <?php snippet(strtolower($section->intendedTemplate()), ['page' => $section]) ?>
     </div>
 <?php endforeach ?>
 

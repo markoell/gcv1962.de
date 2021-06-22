@@ -1,4 +1,4 @@
-<?php snippet('header', array('sticky' => true)) ?>
+<?php snippet('header', ['sticky' => true]) ?>
 
 <div class="container pt-5">
     <h1><?= $page->title()->html() ?></h1>

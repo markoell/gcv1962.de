@@ -1,7 +1,7 @@
 <?php
 
 return function ($site, $pages, $page) {
-    $sections = array();
+    $sections = [];
     
     foreach ($page->children()->listed() as $item) {
         $sections[] = $item;

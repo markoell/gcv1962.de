@@ -7,7 +7,7 @@
   <div class="card-body">
     <div class="container">
         <?php foreach($data->children() as $sub): ?>
-            <?php snippet($sub->intendedTemplate(), array('data' => $sub)) ?>
+            <?php snippet($sub->intendedTemplate(), ['data' => $sub]) ?>
         <?php endforeach ?>
     </div>
   </div>

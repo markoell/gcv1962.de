@@ -5,7 +5,7 @@ return function ($page) {
   $honorations = $page->children()->listed();
   $pageTitle = $page->title()->html();
 
-  $result = array();
+  $result = [];
 
   foreach($honorations as $honoration){
     $key = $honoration->category()->toString();
@@ -14,7 +14,7 @@ return function ($page) {
       $result[$key][] = $honoration;
     }
     else {
-      $result[$key] = array($honoration);
+      $result[$key] = [$honoration];
     }    
   }
 
