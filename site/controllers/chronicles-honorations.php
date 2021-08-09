@@ -10,7 +10,7 @@ return function ($page) {
   foreach($honorations as $honoration){
     $key = $honoration->category()->toString();
     
-    if(array_key_exists($key, $result)){
+    if(isset($result[$key])){
       $result[$key][] = $honoration;
     }
     else {
