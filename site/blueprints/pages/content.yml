@@ -1,2 +1,9 @@
 title: Dateien
 preset: page
+
+fields:
+  info:
+    label: Obsolete Template
+    type: negative
+    text: |
+      Diese Seite wird bald abgelöst.
