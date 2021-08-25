@@ -1,10 +1,10 @@
-<!-- 
-    
-    Standart Template um Seiten mit unterbereichen anzulegen.
-    Es können Unterordner mit eigenen Templates angelegt werden.
-    Es wird nur über alle Unterordner iteriert und deren Template als Snippet aufegrufen
--->
-<?php snippet('header', ['sticky' => true]) ?>
+<?php    
+    // Standart Template um Seiten mit unterbereichen anzulegen.
+    // Es können Unterordner mit eigenen Templates angelegt werden.
+    // Es wird nur über alle Unterordner iteriert und deren Template als Snippet aufegrufen
+?>
+
+<?php snippet('header', array('sticky' => true)) ?>
 <div class="pt-5"></div>
 <h1><?= $page->title()->html() ?></h1>
 

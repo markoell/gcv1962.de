@@ -33,6 +33,11 @@ Kirby::plugin('gcv/custom-tags', [
       return '<a href="mailto:'. $tag->value() .'"><i class="far fa-envelope text-muted"></i></a>';
     }
   ],
+  'eingebettet' => [
+    'html' => function ($tag) {
+      return '<embed src="' . $tag->parent()->file($tag->value())->url() . '" style="width:100%; height:100vh" class="pb-5" type="application/pdf">';
+    }
+  ],
   'facebook' => [
     'html' => function ($tag) {
       $url     = 'https://www.facebook.com';
