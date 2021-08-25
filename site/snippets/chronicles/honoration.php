@@ -2,7 +2,7 @@
 <div class="card mb-3">
   <div class="row no-gutters">
     <div class="col-12 col-md-7 col-lg-5">
-      <img src="<?= $data->image()->resize(400)->url() ?>" class="card-img" alt="">
+      <img src="<?= $data->image()->resize(400, 400)->url() ?>" class="card-img" alt="">
     </div>
     <div class="col">
       <div class="card-body">
@@ -14,10 +14,6 @@
 
           foreach ($items as $item): ?>
             <li><?= $item->year()->toString() ?></li>
-            <?php foreach ($item->images()->toFiles() as $image): ?>
-              <img src="<?= $image->crop(400)->url() ?>">
-            <?php endforeach ?>
-            <p><?= $item->price() ?></p>
           <?php endforeach ?>
           </ul>
       </div>
