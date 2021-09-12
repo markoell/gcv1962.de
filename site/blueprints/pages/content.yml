@@ -4,6 +4,7 @@ preset: page
 fields:
   info:
     label: Obsolete Template
-    type: negative
+    type: info
+    theme: negative
     text: |
       Diese Seite wird bald abgelöst.
