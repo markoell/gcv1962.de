@@ -1,2 +1,14 @@
 title: Gruppen
-preset: pages
+preset: page
+
+options:
+  changeTemplate:
+    - subpages
+
+fields:
+  info:
+    label: Obsolete Template
+    type: info
+    theme: negative
+    text: |
+      Diese Seite wird bald abgelöst. Bitte ändere diese Seite in "Unterseiten"

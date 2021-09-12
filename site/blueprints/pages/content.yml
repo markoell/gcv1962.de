@@ -1,6 +1,10 @@
 title: Dateien
 preset: page
 
+options:
+  changeTemplate:
+    - subpages
+
 fields:
   info:
     label: Obsolete Template
