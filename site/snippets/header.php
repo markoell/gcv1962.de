@@ -38,7 +38,7 @@
   <?= js('/assets/vendors/photoswipe/photoswipe.min.js') ?>
   <?= js('/assets/vendors/photoswipe/photoswipe-ui-default.min.js') ?>
     
-  <title><?= $site->title()->html() ?> | <?= $page->headline()->html() ?></title>
+  <title><?= $site->title()->html() ?> | <?= e($page->headline()->isNotEmpty(), $page->headline()->html(), $page->title()->html()) ?></title>
 </head>
 <body>
 <?php snippet('nav/navigationbar', ['sticky' => $sticky]) ?>
