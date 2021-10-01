@@ -2,24 +2,14 @@
 
 return function ($page) {
   
-  $honorations = $page->children()->listed();
+  $honorations = $page->children()->listed()->groupBy(function ($p) { 
+    return $p->category()->toString(); 
+  });
+
   $pageTitle = $page->title()->html();
-
-  $result = [];
-
-  foreach($honorations as $honoration){
-    $key = $honoration->category()->toString();
-    
-    if(isset($result[$key])){
-      $result[$key][] = $honoration;
-    }
-    else {
-      $result[$key] = [$honoration];
-    }    
-  }
 
   return [
     'pageTitle' => $pageTitle,
-    'honorations' => $result
+    'honorations' => $honorations
   ];
 };
