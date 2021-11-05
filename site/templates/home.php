@@ -1,6 +1,6 @@
 <?php
   $topThemaPage = page('home/topthema');
-  $termine = page('home/Termine');
+  $termine = $kirby->collection("datesOverview");
   $taschengeldJob = page('home/Taschengeldjob');
   $werbung = page('home/ihre-werbung');
 ?>
@@ -32,7 +32,7 @@
   <div class="container mt-5">
     <div class="row d-flex justify-content-arround">
       <!-- 6. Aktuelle Termine; Link mit Katersymbol (Modal)-->
-      <?php if($termine->exists() && $termine->isListed()): ?>
+      <?php if($termine->exists() && $termine->hasListedChildren()): ?>
         <?php snippet("home/termine") ?>
       <?php endif //Termine ?>
 
