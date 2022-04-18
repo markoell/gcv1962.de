@@ -4,7 +4,7 @@
           <div class="col-lg-5">
 
             <ul class="nav">
-              <?php foreach (pages('footer')->children()->listed() as $item): ?>
+              <?php foreach (pages(['footer'])->children()->listed() as $item): ?>
               <li class="nav-item">
                 <a class="nav-link text-white"
                   href="<?= $item->url() ?>"><?= $item->title()->html() ?></a>
