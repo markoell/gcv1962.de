@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73b8cc683d6df7a3b61d6885344b770c",
+    "content-hash": "e953e2f5fc9b1baed890419c04ae5707",
     "packages": [
         {
             "name": "bnomei/kirby3-fingerprint",
