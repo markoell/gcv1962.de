@@ -10,7 +10,7 @@
     "config": {
         "optimize-autoloader": true
     },
-    "license": "MIT License",
+    "license": "MIT",
     "authors": [
         {
             "name": "Marco Koellner",
