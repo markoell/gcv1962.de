@@ -32,5 +32,5 @@ assets/avatars/*
 **/LICENSE
 *.code-workspace
 
-package*.json
-composer*.json
+# package*.json
+# composer*.json
