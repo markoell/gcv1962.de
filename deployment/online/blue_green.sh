@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# blue green deployment ensures less downtime during the update
+#
+##############################################################
 
 source_path=${1%/}
 target_path=${2%/}
@@ -8,9 +12,9 @@ content=${4:-"content"}
 config=${5:-"site/config"}
 accounts=${6:-"site/accounts"}
 
-working_dir=`dirname ${source_path}`
-source_folder=`basename ${source_path}`
-target_folder=`basename ${target_path}`"/${subpath}"
+working_dir=$(dirname ${source_path})
+source_folder=$(basename ${source_path})
+target_folder="$(basename ${target_path})/${subpath}"
 
 cd ${working_dir}
 
@@ -19,5 +23,5 @@ rsync -a "${source_folder}/${content}/" "${target_folder}/${content}/"
 rsync -a "${source_folder}/${config}/" "${target_folder}/${config}/"
 rsync -a "${source_folder}/${accounts}/" "${target_folder}/${accounts}/"
 
-mv -f ${source_folder} ${source_folder}_`date -u --iso-8601=seconds`
+tar -czf "${source_folder}_$(date +%Y%m%d-%H%M%s%z).tar.gz" ${source_folder}/*
 ln -s ${target_folder} ${source_folder}
