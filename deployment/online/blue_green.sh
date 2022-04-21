@@ -19,5 +19,5 @@ rsync -a "${source_folder}/${content}/" "${target_folder}/${content}/"
 rsync -a "${source_folder}/${config}/" "${target_folder}/${config}/"
 rsync -a "${source_folder}/${accounts}/" "${target_folder}/${accounts}/"
 
-mv -f ${source_folder} ${source_folder}_`date -u --iso-8601=seconds`
+tar -czf "${source_folder}_$(date +%Y%m%d-%H%M%s%z).tar.gz" ${source_folder}/*
 ln -s ${target_folder} ${source_folder}
