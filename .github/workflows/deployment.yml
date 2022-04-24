@@ -4,9 +4,17 @@ name: Deploy To Production
 
 # Controls when the action will run. 
 on:
+  # Manual Trigger
+  workflow_dispatch:
+    environment:
+      description: 'Environment to run [Disabled]'
+      type: environment
+      required: true
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ main ]
+    branches: 
+    - main
+    - development
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -62,11 +70,28 @@ jobs:
           publish/*
           deployment/online/blue_green.sh
 
-  deploy:
-
-    runs-on: ubuntu-latest
+  pre-deploy:
+    name: 'Prepare Deployment'
     needs: build
-    environment: production_environment
+    env:
+      API_HOST: 'https://api.github.com/repos/markoell/gcv1962.de/environments'
+    steps:
+      - name: 'Set Production Environment'
+        run: |
+          echo "TARGET_ENV=${API_HOST}/production_environment" >> $GITHUB_ENV
+        if: ${{ github.ref == 'refs/heads/main }}
+      - name: 'Set Test Environment'
+        run: |
+          echo "TARGET_ENV=${API_HOST}/staging_environment" >> $GITHUB_ENV
+        if: ${{ github.ref == 'refs/heads/development }}
+  
+  deploy:
+    name: 'Deployment'
+    runs-on: ubuntu-latest
+    needs: [build, pre-deploy]
+    environment:
+      name: production_environment
+      url: ${{ env.TARGET_ENV }}
 
     env:
       REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
