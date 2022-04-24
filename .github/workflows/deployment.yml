@@ -71,6 +71,7 @@ jobs:
           deployment/online/blue_green.sh
 
   pre-deploy:
+    runs-on: ubuntu-latest
     name: 'Prepare Deployment'
     needs: build
     env:
