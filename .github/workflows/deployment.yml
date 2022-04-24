@@ -79,11 +79,11 @@ jobs:
       - name: 'Set Production Environment'
         run: |
           echo "TARGET_ENV=${API_HOST}/production_environment" >> $GITHUB_ENV
-        if: ${{ github.ref == 'refs/heads/main }}
+        if: ${{ github.ref == 'refs/heads/main' }}
       - name: 'Set Test Environment'
         run: |
           echo "TARGET_ENV=${API_HOST}/staging_environment" >> $GITHUB_ENV
-        if: ${{ github.ref == 'refs/heads/develop }}
+        if: ${{ github.ref == 'refs/heads/develop' }}
   
   deploy:
     name: 'Deployment'
