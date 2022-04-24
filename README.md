@@ -1,12 +1,11 @@
 # gcv1962.de
 Website Projekt für den Gundelsheimer Carneval Verein 1962 e.V. als überarbeitete Version
 
-## Status
-
-[![Deploy to test server](https://github.com/markoell/gcv1962.de/actions/workflows/deployToStagingServer.yml/badge.svg?branch=development)][StateDev]
-
-[![Deploy To Production](https://github.com/markoell/gcv1962.de/actions/workflows/deployToProdServer.yml/badge.svg?branch=main)][StateProd]
-
+## Stages
+| Stage | Link | Status |
+| --- | --- | --- |
+| PROD | https://gcv1962.de/ | [![Deploy To Production](https://github.com/markoell/gcv1962.de/actions/workflows/deployment.yml/badge.svg?branch=main)][State] |
+| TEST | http://gcv.mk-swe.de/ | [![Deploy to test server](https://github.com/markoell/gcv1962.de/actions/workflows/deployment.yml/badge.svg?branch=develop)][State] |
 
 # Contributing
 Befolge folgende Schritte, um das Projekt aufzusetzen:
@@ -89,8 +88,7 @@ docker-compose up -d
 7. Geh auf Website http://localhost
 ![GCV Titelseite Ausschnitt][page]
 
-[StateDev]: https://github.com/markoell/gcv1962.de/actions/workflows/deployToStagingServer.yml
-[StateProd]: https://github.com/markoell/gcv1962.de/actions/workflows/deployToProdServer.yml
+[State]: https://github.com/markoell/gcv1962.de/actions/workflows/deployment.yml
 [Composer]: https://getcomposer.org/
 [Nodejs]: https://nodejs.org/
 [Docker]: https://www.docker.com/
