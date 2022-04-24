@@ -24,4 +24,6 @@ rsync -a "${source_folder}/${config}/" "${target_folder}/${config}/"
 rsync -a "${source_folder}/${accounts}/" "${target_folder}/${accounts}/"
 
 tar -czf "${source_folder}_$(date +%Y%m%d-%H%M%s%z).tar.gz" ${source_folder}/*
+
+rm ${source_folder}
 ln -s ${target_folder} ${source_folder}
