@@ -15,11 +15,11 @@
   
   <?= css('assets/vendors/fontawesome-free/css/all.css') ?>
   <?= css('assets/vendors/bootstrap/css/bootstrap.css') ?>
-  <?= css('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,400i,700') ?>
-  <?= css('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap') ?>
   <?= css('assets/vendors/photoswipe/photoswipe.css') ?>
   <?= css('assets/vendors/photoswipe/default-skin/default-skin.css') ?>
-
+  
+  <?= Bnomei\Fingerprint::css('assets/css/open-sans.css') ?>
+  <?= Bnomei\Fingerprint::css('assets/css/roboto.css') ?>
   <?= Bnomei\Fingerprint::css('assets/css/gcv.css') ?>
   <?= Bnomei\Fingerprint::css('assets/css/gcv-media.css') ?>
   <?= Bnomei\Fingerprint::css('assets/css/gcv-ie.css') ?>
