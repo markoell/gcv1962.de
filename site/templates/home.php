@@ -9,10 +9,10 @@
 <?php snippet('header', array('sticky' => false)) ?>
 
 <!-- 1. Bilder anzeigen -->
-<?php if($next = page('home/Titelbilder')): ?>
-<section id="<?= $next->title()->html() ?>">
-  <?php snippet(strtolower($next->intendedTemplate()), array('data' => $next)) ?>
-</section>
+<?php if($null !== ($next = page('home/Titelbilder'))): ?>
+  <section id="<?= $next->title()->html() ?>">
+    <?php snippet(strtolower($next->intendedTemplate()), array('data' => $next)) ?>
+  </section>
 <?php endif ?>
 <!-- 2. TopThema anzeigen -->
 <?php if($topThemaPage->exists() && $topThemaPage->isListed()): ?>
@@ -21,7 +21,7 @@
 </div>
 <?php endif ?>
 <!-- 3. Begrüßung Präsi anzeigen -->
-<?php if($next = page('home/Ansprache')): ?>
+<?php if($null !== ($next = page('home/Ansprache'))): ?>
 <section id="Ansprache" class="js--section-speach">
   <div class="container mt-5">
     <?php snippet(strtolower($next->intendedTemplate()), array('data' => $next)) ?>
@@ -58,7 +58,7 @@
       <?php endif //Werbung ?>
 
       <!-- 5. Ansprache des PP; Link mit Katersymbol (Modal?)-->
-      <?php if($next = page('home/Prinzenpaars')): ?>
+      <?php if($null !== ($next = page('home/Prinzenpaars'))): ?>
       <div class="col-sm text-center">
         <img
           src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>"

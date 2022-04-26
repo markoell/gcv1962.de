@@ -37,8 +37,13 @@
   <?= js('/assets/vendors/bootstrap/js/bootstrap.bundle.min.js') ?>
   <?= js('/assets/vendors/photoswipe/photoswipe.min.js') ?>
   <?= js('/assets/vendors/photoswipe/photoswipe-ui-default.min.js') ?>
-    
-  <title><?= $site->title()->html() ?> | <?= $page->headline()->html() ?></title>
+  
+  <?php if ($page->isHomePage()): ?>
+    <title><?= $site->title() ?></title>
+  <?php else: ?>
+    <title><?= $site->title()->html() ?> | <?= $page->title() ?></title>
+  <?php endif ?>
+  
 </head>
 <body>
 <?php snippet('nav/navigationbar', array('sticky' => $sticky)) ?>
