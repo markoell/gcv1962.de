@@ -1,11 +1,12 @@
 # gcv1962.de
 Website Projekt für den Gundelsheimer Carneval Verein 1962 e.V. als überarbeitete Version
 
-## Stages
+## Quality
 | Stage | Link | Status |
 | --- | --- | --- |
 | PROD | https://gcv1962.de/ | [![Deploy To Production](https://github.com/markoell/gcv1962.de/actions/workflows/deployment.yml/badge.svg?branch=main)][State] |
 | TEST | http://gcv.mk-swe.de/ | [![Deploy to test server](https://github.com/markoell/gcv1962.de/actions/workflows/deployment.yml/badge.svg?branch=develop)][State] |
+| Code Quality | [Codefactor](https://www.codefactor.io/repository/github/markoell/gcv1962.de) | [![CodeFactor](https://www.codefactor.io/repository/github/markoell/gcv1962.de/badge)](https://www.codefactor.io/repository/github/markoell/gcv1962.de)
 
 # Contributing
 Befolge folgende Schritte, um das Projekt aufzusetzen:
