@@ -1,0 +1,44 @@
+title: 
+  en: Author
+  de: Autor
+description: 
+  en: The author can edit all pages
+  de: Der Autor kann alle Seiten bearbeiten, löschen, sowie neue erstellen. Er darf keine anderen Benutzer verwalten!
+
+permissions:
+  access:
+    settings: false
+  users: false
+  user:
+    changeRole: false
+
+columns:
+  left:
+    width: 1/2
+    fields:
+      email:
+        label: 
+          en: Contact Email
+          de: Kontaktemail
+        type: email
+      phone:
+        label: 
+          en: Phone
+          de: Telefon
+        type: tel
+  right:
+    width: 1/2
+    fields:
+      website:
+        label: Website
+        type: url
+      twitter:
+        label: Twitter
+        type: text
+        icon: twitter
+        placeholder: @username
+      instagram:
+        label: Instagram
+        type: text
+        icon: instagram
+        placeholder: username

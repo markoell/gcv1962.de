@@ -1,0 +1,45 @@
+title: 
+  en: Default
+  de: Standard
+description: 
+  en: The author can edit all pages
+  de: Der Autor kann alle Seiten bearbeiten
+
+permissions:
+  access:
+    settings: false
+    users: false
+  files: false
+  pages: false
+  site: false
+
+columns:
+  left:
+    width: 1/2
+    fields:
+      email:
+        label: 
+          en: Contact Email
+          de: Kontaktemail
+        type: email
+      phone:
+        label: 
+          en: Phone
+          de: Telefon
+        type: tel
+  right:
+    width: 1/2
+    fields:
+      website:
+        label: Website
+        type: url
+      twitter:
+        label: Twitter
+        type: text
+        icon: twitter
+        placeholder: @username
+      instagram:
+        label: Instagram
+        type: text
+        icon: instagram
+        placeholder: username
