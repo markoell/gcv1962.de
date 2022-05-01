@@ -7,7 +7,8 @@ $samePage = substr(Url::last(), 0, strlen($query)) === $query;
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle"><?= $data->title()->html() ?>
+        <h5 class="modal-title" id="exampleModalCenterTitle">
+          <?php e($data->headline()->isNotEmpty(), $data->headline()->html(), $data->title()->html()) ?>
         </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>

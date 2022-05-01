@@ -1,5 +1,6 @@
 title: Startseite
 preset: page
+files: false
 
 fields:
   headline:
