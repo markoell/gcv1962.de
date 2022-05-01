@@ -1,0 +1,29 @@
+title: Popup
+preset: page
+pages: false
+
+status:
+  draft:
+    label:
+      en: Draft
+      de: Entwurf
+    text:
+      en: Drafts of popup for review
+      de: Popup Entwürfe
+  listed:
+    label:
+      en: Published
+      de: Aktiv
+    text:
+      en: Current active Popup; Only one is allowed!
+      de: Gerade aktives Popup; Nur eins darf aktiv sein!
+
+fields:
+  headline:
+    label:
+      en: Headline
+      de: Überschrift
+    type: text
+  text:
+    label: Text
+    type: textarea

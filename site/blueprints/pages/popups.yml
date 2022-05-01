@@ -1,0 +1,22 @@
+title: Popups
+image: 
+  back: white
+  icon: folder
+
+status:
+  unlisted:
+
+sections:
+
+  drafts:
+    headline: Drafts
+    type: pages
+    status: draft
+    templates: popup
+
+  published:
+    headline: Published Articles
+    type: pages
+    status: listed
+    templates: popup
+    max: 1
