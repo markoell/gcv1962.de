@@ -1,7 +1,7 @@
-title: 
+title:
   en: Default
   de: Standard
-description: 
+description:
   en: The author can edit all pages
   de: Der Autor kann alle Seiten bearbeiten
 
@@ -18,12 +18,12 @@ columns:
     width: 1/2
     fields:
       email:
-        label: 
+        label:
           en: Contact Email
           de: Kontaktemail
         type: email
       phone:
-        label: 
+        label:
           en: Phone
           de: Telefon
         type: tel

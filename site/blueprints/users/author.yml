@@ -1,7 +1,7 @@
-title: 
+title:
   en: Author
   de: Autor
-description: 
+description:
   en: The author can edit all pages
   de: Der Autor kann alle Seiten bearbeiten, löschen, sowie neue erstellen. Er darf keine anderen Benutzer verwalten!
 
@@ -17,12 +17,12 @@ columns:
     width: 1/2
     fields:
       email:
-        label: 
+        label:
           en: Contact Email
           de: Kontaktemail
         type: email
       phone:
-        label: 
+        label:
           en: Phone
           de: Telefon
         type: tel
