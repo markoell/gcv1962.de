@@ -7,6 +7,8 @@
  * All config options: https://getkirby.com/docs/reference/system/options
  */
 return [
-    'debug' => true,
-    'url' => 'http://localhost'
+    'debug' => false,
+    'panel' => [
+        'css' => 'assets/css/custom-panel.css'
+      ]
 ];

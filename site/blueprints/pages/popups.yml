@@ -1,0 +1,34 @@
+title: Popups
+image:
+  back: white
+  icon: folder
+
+status:
+  listed:
+
+sections:
+  info:
+    type: info
+    headline: Info
+    text:
+      en: |
+        Please enable only one PopUp at a time.
+      de: |
+        Bitte nur ein PopUp aktivieren. Inaktive, sofern gebraucht, können unter Entwürfe gesammelt werden.
+
+  drafts:
+    headline:
+      en: Drafts
+      de: Entwürfe
+    type: pages
+    status: draft
+    templates: popup
+
+  published:
+    headline:
+      en: Active PopUp
+      de: Aktives PopUp
+    type: pages
+    status: listed
+    templates: popup
+    max: 1

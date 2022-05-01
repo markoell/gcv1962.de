@@ -1,24 +1,17 @@
 <?php
-  $topThemaPage = page('home/topthema');
   $termine = $kirby->collection("datesOverview");
   $taschengeldJob = page('home/Taschengeldjob');
   $werbung = page('home/ihre-werbung');
 ?>
 
-
 <?php snippet('header', array('sticky' => false)) ?>
-
-<!-- 1. Bilder anzeigen -->
+<!-- 1. TopThema anzeigen -->
+<?php snippet('popups', array('popups' => $popups)) ?>
+<!-- 2. Bilder anzeigen -->
 <?php if($null !== ($next = page('home/Titelbilder'))): ?>
   <section id="<?= $next->title()->html() ?>">
     <?php snippet(strtolower($next->intendedTemplate()), array('data' => $next)) ?>
   </section>
-<?php endif ?>
-<!-- 2. TopThema anzeigen -->
-<?php if($topThemaPage->exists() && $topThemaPage->isListed()): ?>
-<div id="<?= $topThemaPage->title()->html() ?>">
-  <?php snippet(strtolower($topThemaPage->intendedTemplate()), array('data' => $topThemaPage)) ?>
-</div>
 <?php endif ?>
 <!-- 3. Begrüßung Präsi anzeigen -->
 <?php if($null !== ($next = page('home/Ansprache'))): ?>
