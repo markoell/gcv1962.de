@@ -35,7 +35,7 @@ site/cache/*
 /site/sessions
 /site/logs/
 /kirby/
-
+/content/
 
 ### PowerShell ###
 # Exclude packaged modules
