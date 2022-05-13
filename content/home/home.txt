@@ -1,0 +1,9 @@
+Title: Home
+
+----
+
+Headline: Welcome to the default starter page
+
+----
+
+Text: To retreive the content; please contact (email: gcv@mk-swe.de).
