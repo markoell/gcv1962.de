@@ -1,10 +1,6 @@
-<?php
-  $termine = $kirby->collection("datesOverview");
-  $taschengeldJob = page('home/Taschengeldjob');
-  $werbung = page('home/ihre-werbung');
-?>
-
 <?php snippet('header', array('sticky' => false)) ?>
+<?php snippet('default') ?>
+
 <!-- 1. TopThema anzeigen -->
 <?php snippet('popups', array('popups' => $popups)) ?>
 <!-- 2. Bilder anzeigen -->
@@ -25,12 +21,12 @@
   <div class="container mt-5">
     <div class="row d-flex justify-content-arround">
       <!-- 6. Aktuelle Termine; Link mit Katersymbol (Modal)-->
-      <?php if($termine->exists() && $termine->hasListedChildren()): ?>
+      <?php if(isset($termine) && $termine->hasListedChildren()): ?>
         <?php snippet("home/termine") ?>
       <?php endif //Termine ?>
 
       <!-- 4. Nur Taschengeldjob anzeigen; Link mit Katersymbol (Modal)-->
-      <?php if($taschengeldJob->exists() && $taschengeldJob->isListed()): ?>
+      <?php if(isset($taschengeldJob) && $taschengeldJob->isListed()): ?>
       <div class="col-sm text-center">
         <img
           src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>"
@@ -40,7 +36,7 @@
       </div>
       <?php endif //Taschengeldjob ?>
 
-      <?php if($werbung->exists() && $werbung->isListed()): ?>
+      <?php if(isset($werbung) && $werbung->isListed()): ?>
         <div class="col-sm text-center">
           <img
             src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>"
