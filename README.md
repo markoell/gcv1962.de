@@ -79,14 +79,20 @@ sudo apt-get update
 sudo apt  install docker.io
 sudo apt  install docker-compose
 # Install docker-compose on Ubuntu
-
 ```
-6. Starte die Webanwendung:
+6. Füge www-data zur aktuellen Benutzergruppe hinzu
+```bash
+sudo usermod -aG daniel www-data
+sudo usermod -aG www-data daniel
+sudo chmod g+rw .
+```
+
+7. Starte die Webanwendung:
 ```bash
 cd deployment/docker-local/
 docker-compose up -d
 ```
-7. Geh auf Website http://localhost
+8. Geh auf Website http://localhost
 ![GCV Titelseite Ausschnitt][page]
 
 [State]: https://github.com/markoell/gcv1962.de/actions/workflows/deployment.yml
