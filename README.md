@@ -93,10 +93,63 @@ cd deployment/docker-local/
 docker-compose up -d
 ```
 8. Geh auf Website http://localhost
-![GCV Titelseite Ausschnitt][page]
+
+
+## XDebug
+
+XDebug kann lokal installiert werden:
+https://getkirby.com/docs/cookbook/setup/php-debugging-with-xdebug
+
+Das vorhandene Docker-Compose File `deployment/docker-local/docker-compose.yml` installiert ebenfalls XDebug
+
+### Lauch-Configuration für VSCode:
+
+```json
+"configurations": [
+        {
+            "name": "Listen for Xdebug remote",
+            "type": "php",
+            "request": "launch",
+            "port": 9000,
+            "pathMappings": {
+                "/var/www/html/": "${workspaceFolder}"
+            }
+        }
+    ]
+```
+
+### Lauch-Configuration für VSCode Remote mit WSL:
+
+```json
+"configurations": [
+        {
+            "name": "Listen for Xdebug remote",
+            "type": "php",
+            "request": "launch",
+            "port": 9000,
+            "hostname": "localhost",
+            "pathMappings": {
+                "/var/www/html/": "${workspaceFolder}"
+            }
+        }
+    ]
+```
+
+### Test XDebug
+
+Leg eine Datei info.php im zentralen Verzeichnis an
+
+```php
+<?php
+    xdebug_info();
+    exit();
+?>
+```
+
+Aufruf: http://localhost/info.php
+
 
 [State]: https://github.com/markoell/gcv1962.de/actions/workflows/deployment.yml
 [Composer]: https://getcomposer.org/
 [Nodejs]: https://nodejs.org/
 [Docker]: https://www.docker.com/
-[page]: gcvtitle.png

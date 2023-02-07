@@ -5,32 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-        "type": "PowerShell",
-        "request": "launch",
-        "name": "PowerShell Launch (current file)",
-        "script": "${file}",
-        "args": [],
-        "cwd": "${file}"
-        },
-        {
-            "name": "Listen for XDebug",
+            "name": "Listen for Xdebug remote",
             "type": "php",
             "request": "launch",
             "port": 9000,
-            "ignore": [
-              "**/kirby/**/*.php"
-            ]
-        },
-        {
-            "name": "Launch currently open script",
-            "type": "php",
-            "request": "launch",
-            "program": "${file}",
-            "cwd": "${fileDirname}",
-            "port": 9000,
-            "ignore": [
-              "**/kirby/**/*.php"
-            ]
+            "hostname": "localhost",
+            "pathMappings": {
+                "/var/www/html/": "${workspaceFolder}"
+            }
         }
     ]
 }
