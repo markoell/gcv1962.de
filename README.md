@@ -12,9 +12,10 @@ Website Projekt für den Gundelsheimer Carneval Verein 1962 e.V. als überarbeit
 Befolge folgende Schritte, um das Projekt aufzusetzen:
 1. Klone das Repository
 ```bash
-git clone git@github.com:markoell/gcv1962.de.git
+git clone git@github.com:markoell/gcv1962.de.git --recurse-submodules
 ```
-2. Klone alle Untermodule/Submodules
+2. Klone alle Untermodule/Submodules (Falls clone ohne `--recurse-submodules` geschehen ist)
+
 > Für den Zugriff auf gcv1962-content werden spezielle Berechtigungen benötigt!
   Hierzu eine kurze Nachricht an den Repository-Owner senden.
 
@@ -79,18 +80,77 @@ sudo apt-get update
 sudo apt  install docker.io
 sudo apt  install docker-compose
 # Install docker-compose on Ubuntu
-
 ```
-6. Starte die Webanwendung:
+6. Füge www-data zur aktuellen Benutzergruppe hinzu
+```bash
+sudo usermod -aG daniel www-data
+sudo usermod -aG www-data daniel
+sudo chmod g+rw .
+```
+
+7. Starte die Webanwendung:
 ```bash
 cd deployment/docker-local/
 docker-compose up -d
 ```
-7. Geh auf Website http://localhost
-![GCV Titelseite Ausschnitt][page]
+8. Geh auf Website http://localhost
+
+
+## XDebug
+
+XDebug kann lokal installiert werden:
+https://getkirby.com/docs/cookbook/setup/php-debugging-with-xdebug
+
+Das vorhandene Docker-Compose File `deployment/docker-local/docker-compose.yml` installiert ebenfalls XDebug
+
+### Lauch-Configuration für VSCode:
+
+```json
+"configurations": [
+        {
+            "name": "Listen for Xdebug remote",
+            "type": "php",
+            "request": "launch",
+            "port": 9000,
+            "pathMappings": {
+                "/var/www/html/": "${workspaceFolder}"
+            }
+        }
+    ]
+```
+
+### Lauch-Configuration für VSCode Remote mit WSL:
+
+```json
+"configurations": [
+        {
+            "name": "Listen for Xdebug remote",
+            "type": "php",
+            "request": "launch",
+            "port": 9000,
+            "hostname": "localhost",
+            "pathMappings": {
+                "/var/www/html/": "${workspaceFolder}"
+            }
+        }
+    ]
+```
+
+### Test XDebug
+
+Leg eine Datei info.php im zentralen Verzeichnis an
+
+```php
+<?php
+    xdebug_info();
+    exit();
+?>
+```
+
+Aufruf: http://localhost/info.php
+
 
 [State]: https://github.com/markoell/gcv1962.de/actions/workflows/deployment.yml
 [Composer]: https://getcomposer.org/
 [Nodejs]: https://nodejs.org/
 [Docker]: https://www.docker.com/
-[page]: gcvtitle.png

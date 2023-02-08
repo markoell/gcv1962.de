@@ -8,13 +8,13 @@
 <!-- 1. TopThema anzeigen -->
 <?php snippet('popups', array('popups' => $popups)) ?>
 <!-- 2. Bilder anzeigen -->
-<?php if($null !== ($next = page('home/Titelbilder'))): ?>
+<?php if(!is_null($next = page('home/Titelbilder'))): ?>
   <section id="<?= $next->title()->html() ?>">
     <?php snippet(strtolower($next->intendedTemplate()), array('data' => $next)) ?>
   </section>
 <?php endif ?>
 <!-- 3. Begrüßung Präsi anzeigen -->
-<?php if($null !== ($next = page('home/Ansprache'))): ?>
+<?php if(!is_null($next = page('home/Ansprache'))): ?>
 <section id="Ansprache" class="js--section-speach">
   <div class="container mt-5">
     <?php snippet(strtolower($next->intendedTemplate()), array('data' => $next)) ?>
@@ -51,7 +51,7 @@
       <?php endif //Werbung ?>
 
       <!-- 5. Ansprache des PP; Link mit Katersymbol (Modal?)-->
-      <?php if($null !== ($next = page('home/Prinzenpaars'))): ?>
+      <?php if(!is_null($next = page('home/Prinzenpaars'))): ?>
       <div class="col-sm text-center">
         <img
           src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>"

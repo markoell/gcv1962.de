@@ -3,8 +3,14 @@ services:
   
   webserver:
     build: ./
-    image: php:7.4-apache-rewrite
+    image: php:8.0-apache-rewrite
     ports:
       - "127.0.0.1:80:80"
+    environment:
+      APACHE_RUN_USER: '#1000'
+      APACHE_RUN_GROUP: '#1000'
     volumes:
+      - ./php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ./php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
       - ../../:/var/www/html
+#      - ./php:/var/www/html
