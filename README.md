@@ -12,9 +12,10 @@ Website Projekt für den Gundelsheimer Carneval Verein 1962 e.V. als überarbeit
 Befolge folgende Schritte, um das Projekt aufzusetzen:
 1. Klone das Repository
 ```bash
-git clone git@github.com:markoell/gcv1962.de.git
+git clone git@github.com:markoell/gcv1962.de.git --recurse-submodules
 ```
-2. Klone alle Untermodule/Submodules
+2. Klone alle Untermodule/Submodules (Falls clone ohne `--recurse-submodules` geschehen ist)
+
 > Für den Zugriff auf gcv1962-content werden spezielle Berechtigungen benötigt!
   Hierzu eine kurze Nachricht an den Repository-Owner senden.
 
