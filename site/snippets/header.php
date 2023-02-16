@@ -16,7 +16,6 @@
   <?= css('assets/vendors/fontawesome-free/css/all.css') ?>
   <?= css('assets/vendors/bootstrap/css/bootstrap.css') ?>
   <?= css('assets/vendors/photoswipe/photoswipe.css') ?>
-  <?= css('assets/vendors/photoswipe/default-skin/default-skin.css') ?>
   
   <?= Bnomei\Fingerprint::css('assets/css/open-sans.css') ?>
   <?= Bnomei\Fingerprint::css('assets/css/roboto.css') ?>
@@ -35,8 +34,15 @@
     
   <?= js('/assets/vendors/jquery/jquery.js') ?>
   <?= js('/assets/vendors/bootstrap/js/bootstrap.bundle.min.js') ?>
-  <?= js('/assets/vendors/photoswipe/photoswipe.min.js') ?>
-  <?= js('/assets/vendors/photoswipe/photoswipe-ui-default.min.js') ?>
+  <script type="module">
+    import PhotoSwipeLightbox from '/assets/vendors/photoswipe/photoswipe-lightbox.esm.min.js';
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#my-gallery',
+      children: 'a',
+      pswpModule: () => import('/assets/vendors/photoswipe/photoswipe.esm.min.js')
+    });
+    lightbox.init();
+  </script>
   
   <?php if ($page->isHomePage()): ?>
     <title><?= $site->title() ?></title>
