@@ -35,7 +35,7 @@ jobs:
 
       - name: Cache packages
         id: cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             ./kirby
@@ -49,12 +49,12 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: "12"
+          node-version: 16
 
       - name: NPM
-        run: npm install
+        run: npm ci
 
       - name: Copy
         run: |
@@ -62,7 +62,7 @@ jobs:
           rsync -av --exclude-from=deployment/online/rsync.ignore --exclude publish . publish/
 
       - name: Upload result for deploy
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: publish
           path: |
