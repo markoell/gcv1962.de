@@ -9,14 +9,14 @@
       <div class="row">
         <?php if($data->hasImages()): ?>
           <div class="col-md-5">
-            <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+            <div class="pswp-gallery" id="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
               <?php $i = 0; foreach($data->images() as $image): $i++; ?>
                 <?php $dimensions = $image->dimensions(); ?>
                 <?php $size = $i == 1 ? 450 : 50 ?>
                 <?php $thumb = $image->resize($size) ?>
                 <figure class="figure mb-0" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                  <a href="<?= $image->url() ?>" itemprop="contentUrl" data-size="<?= $dimensions->width() . 'x' . $dimensions->height() ?>" data-med-size="1024x683">
-                      <img src="<?= $thumb->url() ?>" class="figure-img img-fluid" itemprop="thumbnail" alt="Image description" />
+                  <a href="<?= $image->url() ?>" itemprop="contentUrl" data-pswp-width="<?= $dimensions->width() ?>" data-pswp-height="<?= $dimensions->height() ?>">
+                      <img src="<?= $thumb->url() ?>" class="figure-img img-fluid" itemprop="thumbnail" alt="Image description" target="_blank" />
                   </a>
                   <figcaption class="figure-caption" itemprop="caption description"><?= $image->text() ?></figcaption>
                 </figure>
