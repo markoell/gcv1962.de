@@ -3,7 +3,10 @@
 <div class="container pt-5">
     <h1><?= $page->title()->html() ?></h1>
     <?= $page->text()->kirbytext() ?>
-    <?php if($document = $page->file($page->dokument())): ?>
+    <?php 
+        $document = $page->file($page->dokument());
+        if(!is_null($document)): 
+    ?>
         <div class="row mb-2">
             <a class="btn btn-success" href="<?= $document->url() ?>">Download <?= $document->filename() ?> </a>
         </div>
