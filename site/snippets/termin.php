@@ -1,3 +1,14 @@
+<?php
+  $fmt = new IntlDateFormatter(
+    "de-DE",
+    IntlDateFormatter::FULL,
+    IntlDateFormatter::FULL,
+    'Europe/Berlin',
+    IntlDateFormatter::GREGORIAN,
+    'EEEE'
+  );
+?>
+
 <div class="row align-items-center">
   <div class="col-2">
     <h4><span class="badge badge-secondary"><?= $item->date()->toDate('d') ?></span></h4>
@@ -7,7 +18,7 @@
     <h5 class="text-uppercase text-left"><?= $item->title()->html() ?>
     </h5>
     <ul class="list-inline text-justify">
-      <li class="list-inline-item"><i class="far fa-calendar mr-2" aria-hidden="true"></i><?= strftime('%A', $item->date()->toTimestamp()) ?>
+      <li class="list-inline-item"><i class="far fa-calendar mr-2" aria-hidden="true"></i><?= $fmt->format($item->date()->ToTimestamp()) ?>
       </li>
       <li class="list-inline-item"><i class="far fa-clock mr-2" aria-hidden="true"></i><?= $item->date()->toDate('H:i') ?>
       </li>
