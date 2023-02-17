@@ -9,4 +9,4 @@ pages:
 fields:
   text:
     label: Text
-    type:  textarea
+    type: textarea
