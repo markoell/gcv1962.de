@@ -4,10 +4,10 @@ files: false
 fields:
   title:
     label: Title
-    type:  text
+    type: text
   text:
     label: Text
-    type:  textarea
+    type: textarea
     fields:
   dates:
     label: Adressen
@@ -31,9 +31,9 @@ fields:
       public:
         label: Öffentlich
         type: toggle
-        text: 
-            - Intern
-            - Öffentlich
+        text:
+          - Intern
+          - Öffentlich
       target:
         label: Url
         type: url
@@ -42,4 +42,3 @@ fields:
         label: Buttontext
         type: text
         placeholder: Text im Button
-        

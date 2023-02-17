@@ -5,11 +5,10 @@ pages: false
 fields:
   text:
     label: Text
-    type:  textarea
+    type: textarea
 
 options:
   changeTemplate:
     - default
     - werbung
     - content
-    

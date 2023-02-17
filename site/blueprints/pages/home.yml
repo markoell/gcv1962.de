@@ -5,8 +5,8 @@ files: false
 fields:
   headline:
     label: Fenstertitel
-    type:  text
+    type: text
     placeholder: Wird in der Titelzeile des Browsers angezeigt
   text:
     label: Begrüßungstext
-    type:  textarea
+    type: textarea

@@ -112,8 +112,11 @@
       height: 33vh;
   }
 
-  #modalTickets h5,li, 
-  #modalAppointments h5,li {
+  #modalTickets h5, li {
+    font-size: 85%;
+  }
+  
+  #modalAppointments h5, li {
     font-size: 85%;
   }
 
