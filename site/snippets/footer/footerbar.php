@@ -1,4 +1,4 @@
-    <footer class="bg-dark py-3">
+    <footer class="footer bg-dark mt-auto py-3">
       <div class="container">
         <div class="row">
           <div class="col-lg-5">
@@ -28,6 +28,3 @@
       </div>
     </footer>
     <?= snippet('footer/photoswipePswpElement') ?>
-    </body>
-
-    </html>
