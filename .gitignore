@@ -35,6 +35,7 @@ site/cache/*
 /site/sessions
 /site/logs/
 /kirby/
+/content/
 
 
 ### PowerShell ###

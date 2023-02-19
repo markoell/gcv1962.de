@@ -1,0 +1,10 @@
+Title: Home
+
+----
+
+Demo:
+
+----
+Text: # Herzlich Willkommen!
+
+Das ist eine Demopage, die dir zeigt, dass du die Webpage erfolgreich aufgesetzt hast. Wenn du den kompletten Inhalt haben möchtest, wende dich an (email: webmaster@gcv1962.de)

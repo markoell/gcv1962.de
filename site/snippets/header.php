@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="h-100">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
@@ -51,5 +51,7 @@
   <?php endif ?>
   
 </head>
-<body>
-<?php snippet('nav/navigationbar', array('sticky' => $sticky)) ?>
+<body class="d-flex flex-column h-100">
+  <header>
+    <?php snippet('nav/navigationbar', array('sticky' => $sticky)) ?>
+  </header>

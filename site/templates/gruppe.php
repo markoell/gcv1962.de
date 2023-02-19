@@ -1,5 +1,10 @@
 <?php snippet('header', array('sticky' => true)) ?>
-<?php snippet($page->intendedTemplate(), array('data' => $page) ) ?>
+<main>
+    <?php snippet($page->intendedTemplate(), array('data' => $page) ) ?>
+</main>
 
-<?php snippet('scripts') ?> 
 <?php snippet('footer/footerbar') ?>
+<?php snippet('scripts') ?>
+
+</body>
+</html>

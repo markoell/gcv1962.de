@@ -10,11 +10,11 @@ Website Projekt für den Gundelsheimer Carneval Verein 1962 e.V. als überarbeit
 
 # Contributing
 Befolge folgende Schritte, um das Projekt aufzusetzen:
-1. Klone das Repository
+## 1. Klone das Repository
 ```bash
 git clone git@github.com:markoell/gcv1962.de.git --recurse-submodules
 ```
-2. Klone alle Untermodule/Submodules (Falls clone ohne `--recurse-submodules` geschehen ist)
+## 2. Klone alle Untermodule/Submodules (Falls clone ohne `--recurse-submodules` geschehen ist)
 
 > Für den Zugriff auf gcv1962-content werden spezielle Berechtigungen benötigt!
   Hierzu eine kurze Nachricht an den Repository-Owner senden.
@@ -23,7 +23,7 @@ git clone git@github.com:markoell/gcv1962.de.git --recurse-submodules
 git submodule init
 git submodule update
 ```
-3. Installation der PHP-Plugins via [Composer][Composer]
+## 3. Installation der PHP-Plugins via [Composer][Composer]
 ```bash
 sudo apt-get update
 sudo apt-get install composer
@@ -59,7 +59,13 @@ Dann müssen ggf. Packete für PHP nachinstalliert werden:
 sudo apt-get install php7.4-gd
 ```
 
-4. Installation NPM
+Weitere Module zum Nachinstallieren:
+
+```bash
+sudo apt-get install php-mbstring
+```
+
+## 4. Installation NPM
 > [NPM][Nodejs] ist ein PackageManager für JavaScript/[Node.js][Nodejs]. Damit werden alle Frontend-Bibliotheken installiert.
 
 ```bash
@@ -72,7 +78,7 @@ sudo apt-get install -y nodejs
 npm install
 ```
 
-5. Installiere [Docker/Docker-Compose][Docker]
+## 5. Installiere [Docker/Docker-Compose][Docker]
 > [Docker][Docker] ermöglicht eine einfache Ausführung von Progammen auf verschiedensten Plattformen/Betriebssystemen ohne die Probleme diverser Abhängigkeiten
 ```bash
 # Install docker on Ubuntu
@@ -81,21 +87,19 @@ sudo apt  install docker.io
 sudo apt  install docker-compose
 # Install docker-compose on Ubuntu
 ```
-6. Füge www-data zur aktuellen Benutzergruppe hinzu
+## 6. Füge www-data zur aktuellen Benutzergruppe hinzu
 ```bash
 sudo usermod -aG daniel www-data
 sudo usermod -aG www-data daniel
 sudo chmod g+rw .
 ```
 
-7. Starte die Webanwendung:
+## 7. Starte die Webanwendung:
 ```bash
 cd deployment/docker-local/
 docker-compose up -d
 ```
-8. Geh auf Website http://localhost
-
-
+## 8. Geh auf Website http://localhost
 ## XDebug
 
 XDebug kann lokal installiert werden:
