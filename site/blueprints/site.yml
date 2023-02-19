@@ -1,21 +1,28 @@
 title: GCV 1962
-preset: page
-fields:
-    logotext:
-        label: Logotext
-        type: textarea
-    text:
-        label: Text
-        type: textarea
-    facebook:
-        label: Facebook
-        type: url
-    google:
-        label: Google+
-        type: url
-    copyright:
-        label: Copyright
-        type: text
-    author:
-        label: Authors
-        type: text
+
+tabs:
+    content:
+        icon: text
+        label: Content
+        preset: page
+        fields:
+            logotext:
+                label: Logotext
+                type: textarea
+            text:
+                label: Text
+                type: textarea
+            facebook:
+                label: Facebook
+                type: url
+            google:
+                label: Google+
+                type: url
+            copyright:
+                label: Copyright
+                type: text
+            author:
+                label: Authors
+                type: text
+
+    seotab: seo

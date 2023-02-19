@@ -13,6 +13,9 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   
+  <?php snippet('meta_information'); ?>
+  <?php snippet('robots'); ?>
+
   <?= css('assets/vendors/fontawesome-free/css/all.css') ?>
   <?= css('assets/vendors/bootstrap/css/bootstrap.css') ?>
   <?= css('assets/vendors/photoswipe/photoswipe.css') ?>

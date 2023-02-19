@@ -6,7 +6,8 @@
         "getkirby/cms": "^3.9",
         "bnomei/kirby3-fingerprint": "^3.2",
         "distantnative/retour-for-kirby": "^4.4",
-        "medienbaecker/autoresize": "^2.1"
+        "medienbaecker/autoresize": "^2.1",
+        "diesdasdigital/kirby-meta-knight": "^1.2"
     },
     "config": {
         "optimize-autoloader": true,
