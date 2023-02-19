@@ -8,7 +8,7 @@
 <main>
   <?php snippet('popups', array('popups' => $popups)) //TopThema anzeigen ?>
 
-  <?php if(!$page->demo()->exist()): ?>
+  <?php if(!$page->demo()->exists()): ?>
     <!-- 2. Bilder anzeigen -->
     <?php
       $next = page('home/Titelbilder');
