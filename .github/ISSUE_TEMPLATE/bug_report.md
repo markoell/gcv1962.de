@@ -1,38 +1,36 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
+about: Erstelle ein Ticket, um die Webseite zu verbessern.
+title: "[BUG] "
+labels: "bug \U0001F41E"
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## Titel des Tickets
+Beschreibe das Problem in einem kurzen Satz.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+## Beschreibung des Problems
+Beschreibe das Problem im Detail. Wie äußert es sich? Wann tritt es auf? Unter welchen Umständen tritt es auf?
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+## Schritte zur Reproduktion
+Beschreibe die Schritte, die erforderlich sind, um das Problem zu reproduzieren. Je detaillierter, desto besser.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+1. Schritt
+2. Schritt
+3. Schritt
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+## Erwartetes Verhalten
+Beschreibe, was du erwartet hast, dass passiert, wenn das Problem nicht aufgetreten wäre.
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+## Aktuelles Verhalten
+Beschreibe, was tatsächlich passiert ist, als das Problem aufgetreten ist.
 
-**Additional context**
-Add any other context about the problem here.
+## Screenshots
+Füge Screenshots hinzu, die das Problem illustrieren.
+
+## Browserversion
+Welche Browserversion benutzt du? Auf welchem Betriebssystem benutzt du den Browser?
+
+## Weitere Informationen
+Füge weitere Informationen hinzu, die hilfreich sein könnten, um das Problem zu lösen. Zum Beispiel: gab es Fehlermeldungen in der Konsole? Welche Schritte hast du bereits unternommen, um das Problem zu lösen?
