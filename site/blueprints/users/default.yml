@@ -27,6 +27,7 @@ columns:
           en: Phone
           de: Telefon
         type: tel
+
   right:
     width: 1/2
     fields:

@@ -4,25 +4,35 @@ tabs:
     content:
         icon: text
         label: Content
-        preset: page
-        fields:
-            logotext:
-                label: Logotext
-                type: textarea
-            text:
-                label: Text
-                type: textarea
-            facebook:
-                label: Facebook
-                type: url
-            google:
-                label: Google+
-                type: url
-            copyright:
-                label: Copyright
-                type: text
-            author:
-                label: Authors
-                type: text
+        columns:
+            - width: 1/2
+                sections:
+                    info:
+                        type: info
+                        label: Info
+                        theme: none
+                        text:
+                            en: This is just for Test
+                            de: Das ist nur zum Test
+
+            - width: 1/2
+              sections:
+                logo:
+                    type: fields
+                    fields:
+                        logotext:
+                            label: Logotext
+                            type: textarea
+                        facebook:
+                            label: Facebook
+                            type: url
+                support: 
+                    type: fields
+                    fields:
+                        support:
+                            label: Support
+                            type: users
+                            query: kirby.users.filterBy("support","true")
+                            disabled: kirby.user.isAdmin
 
     seotab: seo

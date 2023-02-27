@@ -19,6 +19,17 @@ columns:
           en: Phone
           de: Telefon
         type: tel
+      support:
+        label: Support
+        type: toggle
+        text:
+          - 
+            en: "no"
+            de: "nein"
+          - 
+            en: "yes"
+            de: "ja"
+
   right:
     width: 1/2
     fields:
