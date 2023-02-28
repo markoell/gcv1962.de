@@ -5,16 +5,17 @@ tabs:
         icon: text
         label: Content
         columns:
-            - width: 1/2
+            - width: 1/1
                 sections:
-                    info:
-                        type: info
-                        label: Info
-                        theme: none
-                        text:
-                            en: This is just for Test
-                            de: Das ist nur zum Test
+                    caroussel:
+                        label:
+                            en: Cover
+                            de: Titelbilder
+                        extends: sections/home/caroussel
+                        size: tiny
 
+            - width: 1/2
+            
             - width: 1/2
               sections:
                 logo:
