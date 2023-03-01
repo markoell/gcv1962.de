@@ -1,3 +1,4 @@
+blueprint: site
 title: GCV 1962
 
 tabs:
@@ -6,34 +7,37 @@ tabs:
         label: Content
         columns:
             - width: 1/1
-                sections:
-                    caroussel:
-                        label:
-                            en: Cover
-                            de: Titelbilder
-                        extends: sections/home/caroussel
-                        size: tiny
+              sections:
+                  caroussel:
+                      extends: sections/home/caroussel
+                      label:
+                          en: Cover
+                          de: Titelbilder
+                      size: tiny
+
+            - width: 1/3
+            - width: 1/3
+            - width: 1/3
 
             - width: 1/2
-            
             - width: 1/2
               sections:
-                logo:
-                    type: fields
-                    fields:
-                        logotext:
-                            label: Logotext
-                            type: textarea
-                        facebook:
-                            label: Facebook
-                            type: url
-                support: 
-                    type: fields
-                    fields:
-                        support:
-                            label: Support
-                            type: users
-                            query: kirby.users.filterBy("support","true")
-                            disabled: kirby.user.isAdmin
+                  logo:
+                      type: fields
+                      fields:
+                          logotext:
+                              label: Logotext
+                              type: textarea
+                          facebook:
+                              label: Facebook
+                              type: url
+                  support:
+                      type: fields
+                      fields:
+                          support:
+                              label: Support
+                              type: users
+                              query: kirby.users.filterBy("support","true")
+                              disabled: kirby.user.isAdmin
 
     seotab: seo
