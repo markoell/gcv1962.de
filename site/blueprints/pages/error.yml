@@ -1,0 +1,10 @@
+title:
+  en: Errorpage
+  de: Fehlerseite
+
+sections:
+  content:
+    type: fields
+    fields:
+      text:
+        type: text
