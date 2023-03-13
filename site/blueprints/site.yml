@@ -28,14 +28,19 @@ tabs:
                         empty:
                             en: Currently no popup set
                             de: Aktuell ist kein Popup gesetzt
+                        max: 1
                     draft_popup:
                         image: false
                         type: pages
                         label:
                             en: Draft
                             de: Entwürfe
+                        empty:
+                            en: No draft
+                            de: kein Entwurf
                         parent: site.find("home/popups")
                         status: draft
+                        max: 5
 
             - width: 1/3
                 sections:                
@@ -48,16 +53,21 @@ tabs:
                         parent: site.find("home/ansprache")
                         status: listed
                         empty:
-                            en: Currently no popup set
-                            de: Aktuell ist kein Popup gesetzt
+                            en: Currently no speech set!
+                            de: Aktuell ist keine Ansprache gesetzt!
+                        min: 1
                     draft_speech:
                         type: pages
                         image: false
                         label: 
                             en: Draft
                             de: Entwürfe
+                        empty:
+                            en: No draft
+                            de: kein Entwurf
                         parent: site.find("home/ansprache")
                         status: draft
+                        max: 5
 
             - width: 1/3
                 sections:
@@ -91,13 +101,23 @@ tabs:
                             de: Sonstige Seiten
                         layout: list
                         image: false
-                        status: unlisted
+                        sortBy: title desc
+                        template:
+                            - home
+                            - footer
+                            - error
             
             - width: 1/4
                 sections:
                     logo:
                         type: fields
                         fields:
+                            title:
+                                label: 
+                                    en: Pagetitle
+                                    de: Seitentitel
+                                type: text
+                                placeholder: Wird in der Titelzeile des Browsers angezeigt
                             logotext:
                                 label: Logotext
                                 type: textarea

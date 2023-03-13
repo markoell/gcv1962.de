@@ -2,6 +2,11 @@ title:
   en: Footer
   de: Fußzeile
 
+options:
+  url: false
+  status: false
+  delete: false
+
 sections:
   content:
     type: pages
