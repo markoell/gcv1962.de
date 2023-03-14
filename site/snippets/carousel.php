@@ -1,6 +1,6 @@
 <div id="carouselControls" class="carousel slide" data-ride="carousel" data-interval="10000">
   <div class="carousel-inner">
-  <?php $i = 0; foreach($data->images() as $image): $i++; ?>
+  <?php $i = 0; foreach($page->images() as $image): $i++; ?>
     <div class="carousel-item <?php e($i == 1, 'active') ?>" style="background-image: url(<?php echo($image->url()) ?>);">
       <!--<img class="d-block w-100" src="<?php echo($image->url()) ?>" alt="First slide">-->
     </div>
