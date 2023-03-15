@@ -3,8 +3,8 @@
   <?php if(!$page->demo()->exists()): ?>
 
     <?php foreach ($page->children()->listed() as $key => $value): ?>
-      <section id="<?= $key ?>">
-        <?php snippet(strtolower($value->intendedTemplate()), ['id' => $key, 'page' => $value]) ?>
+      <section id="<?= $key ?>" class="js--section-<?= $key ?>">
+        <?php snippet([$key, strtolower($value->intendedTemplate()), 'default'], ['id' => $key, 'page' => $value]) ?>
       </section>
 
     <?php endforeach ?> 

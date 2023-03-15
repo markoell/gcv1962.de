@@ -1,16 +1,16 @@
 <div class="card bg-transparent border-0 pt-4">
   <h4 class="card-header bg-transparent">
     <div class="container">
-      <?= $data->title()->html() ?>
+      <?= $page->title()->html() ?>
     </div>
   </h4>
   <div class="card-body">
     <div class="container">
       <div class="row">
-        <?php if($data->hasImages()): ?>
+        <?php if($page->hasImages()): ?>
           <div class="col-md-5">
             <div class="pswp-gallery" id="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-              <?php $i = 0; foreach($data->images() as $image): $i++; ?>
+              <?php $i = 0; foreach($page->images() as $image): $i++; ?>
                 <?php $dimensions = $image->dimensions(); ?>
                 <?php $size = $i == 1 ? 450 : 50 ?>
                 <?php $thumb = $image->resize($size) ?>
@@ -25,7 +25,7 @@
           </div>
         <?php endif ?>
         <div class="col-md-7">
-          <div class="card-text"><?php echo $data->text()->kirbytext() ?></div>
+          <div class="card-text"><?php echo $page->text()->kirbytext() ?></div>
         </div>
       </div>
     </div>
