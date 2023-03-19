@@ -74,7 +74,7 @@ b, strong {
 /* Sections                       */
 /*--------------------------------*/
 
-div.odd {
+.odd {
   background-color: var(--bgcolor);
 }
 

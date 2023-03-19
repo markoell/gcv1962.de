@@ -6,6 +6,10 @@ pages:
   max: 2
   min: 0
 
+sections:
+  info:
+    extends: sections/obsolete
+
 fields:
   text:
     label: Text
