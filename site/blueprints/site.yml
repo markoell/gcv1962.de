@@ -1,5 +1,5 @@
 blueprint: site
-title: GCV 1962
+title: Site
 
 tabs:
     content:
@@ -107,6 +107,37 @@ tabs:
                             - home
                             - footer
                             - error
+            
+
+            - width: 2/4
+                sections:       
+                    facebook:
+                        type: fields
+                        fields:
+                            facebook:
+                                label: Facebook Link
+                                type: url
+                            support:
+                                label: Support
+                                type: users
+                                query: kirby.users.filterBy("support","true")
+                                disabled: kirby.user.isAdmin
+
+    seotab: seo              
+    
+    technical:
+        label: 
+            en: Technical
+            de: Technisch
+        columns:
+            - width: 2/3
+                sections:
+                    pages_all:
+                        type: pages
+                        label: 
+                            en: All Pages
+                            de: Alle Seiten
+                
             - width: 1/3
                 sections:
                     site_files:
@@ -116,7 +147,7 @@ tabs:
                             de: Dateien
                         layout: list
                         image: icon
-            
+
             - width: 1/4
                 sections:
                     logo:
@@ -132,34 +163,12 @@ tabs:
                                 query: site.images
                                 image:
                                     back: white
+
+            - width: 1/4
+                sections:
+                    logo_text:
+                        type: fields
+                        fields:
                             logotext:
                                 label: Logotext
                                 type: textarea
-
-            - width: 2/4
-                sections:       
-                    facebook:
-                        type: fields
-                        fields:
-                            facebook:
-                                label: Facebook Link
-                                type: url
-                            support:
-                                label: Support
-                                type: users
-                                query: kirby.users.filterBy("support","true")
-                                disabled: kirby.user.isAdmin
-              
-    
-    central:
-        label: 
-            en: Content
-            de: Inhalt
-        sections:
-          pages_all:
-            type: pages
-            label: 
-                en: All Pages
-                de: Alle Seiten
-
-    seotab: seo
