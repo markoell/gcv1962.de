@@ -43,7 +43,7 @@ tabs:
                         max: 5
 
             - width: 1/3
-blub
+                sections:
                     listed_speech:
                         type: pages
                         image: icon
