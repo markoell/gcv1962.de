@@ -1,6 +1,6 @@
 <?php
 
-return function ($site, $pages, $page){
+return function ($site, $page, $kirby){
     $popups = $page->children()->listed()->template("popup");
 
     if($popups->isEmpty()){
@@ -8,6 +8,7 @@ return function ($site, $pages, $page){
     }
 
     return [
-        'popups' => $popups
+        'popups' => $popups,
+        'termine' => $kirby->collection("datesOverview")
     ];
 };

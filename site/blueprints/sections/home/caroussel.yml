@@ -1,0 +1,6 @@
+type: files
+parent: site.find("home/Titelbilder")
+size: small
+layout: cards
+image:
+  ratio: 16/9

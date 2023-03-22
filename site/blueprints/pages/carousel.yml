@@ -1,0 +1,11 @@
+title:
+  en: Carousel
+  de: Bilderkarusel
+
+sections:
+  gallery:
+    label:
+      en: Pictures
+      de: Bilder
+    type: files
+    layout: cardlets

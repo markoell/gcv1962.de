@@ -1,0 +1,14 @@
+title:
+  en: Row
+  de: Zeile
+image:
+  back: white
+  icon: 📑
+
+options:
+  preview: false
+
+sections:
+  pages:
+    type: pages
+    image: icon

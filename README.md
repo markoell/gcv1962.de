@@ -153,6 +153,10 @@ Leg eine Datei info.php im zentralen Verzeichnis an
 
 Aufruf: http://localhost/info.php
 
+# VSCode
+## Nützliche Plugins
+[YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) + [Kirby 3 Schema](https://github.com/bnomei/kirby3-schema)
+
 
 [State]: https://github.com/markoell/gcv1962.de/actions/workflows/deployment.yml
 [Composer]: https://getcomposer.org/

@@ -1,6 +1,5 @@
-<?php if ($popups->isNotEmpty()) : ?>
-    <?php $popup = $popups->first() ?>
-    <div id="<?= $popup->title()->html() ?>">
-        <?php snippet('popup', array('data' => $popup)) ?>
+<?php foreach ($page->children()->listed() as $key => $value): ?>
+    <div id="<?= $value->title()->html() ?>">
+        <?php snippet(strtolower($value->intendedTemplate()), ['id' => $key, 'page' => $value]) ?>
     </div>
-<?php endif ?>
+<?php endforeach ?>

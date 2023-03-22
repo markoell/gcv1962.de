@@ -1,5 +1,7 @@
 title: Termin
-icon: 📆
+image:
+  back: white
+  icon: 📆
 num: "{{ page.date.toDate('Ymd') }}"
 
 status:

@@ -1,0 +1,15 @@
+title:
+  en: Errorpage
+  de: Fehlerseite
+
+options:
+  url: false
+  status: false
+  delete: false
+
+sections:
+  content:
+    type: fields
+    fields:
+      text:
+        type: text

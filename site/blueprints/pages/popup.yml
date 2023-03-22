@@ -1,5 +1,8 @@
 title: Popup
 preset: page
+image:
+  back: white
+  icon: 💡
 pages: false
 
 status:
@@ -17,6 +20,13 @@ status:
     text:
       en: Current active Popup; Only one is allowed!
       de: Gerade aktives Popup; Nur eins darf aktiv sein!
+  unlisted:
+    label:
+      en: Archive
+      de: Archiv
+    text:
+      en: Disabled Popup
+      de: Deaktiviertes Popup
 
 fields:
   headline:

@@ -8,14 +8,14 @@ $samePage = substr(Url::last(), 0, strlen($query)) === $query;
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalCenterTitle">
-          <?php e($data->headline()->isNotEmpty(), $data->headline()->html(), $data->title()->html()) ?>
+          <?php e($page->headline()->isNotEmpty(), $page->headline()->html(), $page->title()->html()) ?>
         </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <?= $data->text()->kirbytext()?>
+        <?= $page->text()->kirbytext()?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" data-dismiss="modal">Schließen</button>

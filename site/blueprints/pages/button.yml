@@ -1,0 +1,10 @@
+title: GCV-Link
+preset: page
+image:
+  back: white
+  icon: 📍
+
+fields:
+  text:
+    label: Text
+    type: textarea
