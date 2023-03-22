@@ -14,7 +14,7 @@
             </button>
         </div>
         <div class="modal-body">
-            <?= snippet('tools/kirbycontent', array('item' => $page)); ?>
+            <?= snippet('default', compact('page')); ?>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-success" data-dismiss="modal">Schließen</button>

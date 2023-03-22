@@ -172,3 +172,12 @@ tabs:
                             logotext:
                                 label: Logotext
                                 type: textarea
+            
+            - width: 2/4
+                sections:
+                    copyright:
+                        type: fields
+                        fields:
+                            copyright:
+                                label: Copyright
+                                type: text

@@ -1,16 +1,16 @@
 title: Werbung
-preset: page
 
-pages:
-  template: werbung
-  max: 2
-  min: 0
+columns:
+  - width: 2/3
+      sections:
+        logo_text:
+          type: fields
+          fields:
+            text:
+              label: Text
+              type: textarea
 
-sections:
-  info:
-    extends: sections/obsolete
-
-fields:
-  text:
-    label: Text
-    type: textarea
+  - width: 1/3
+      sections:
+        files:
+          type: files

@@ -11,7 +11,7 @@
     </div>
 </main>
 
-<?php snippet('footer/footerBar') ?>
+<?php snippet('footer/footerbar') ?>
 <?php snippet('scripts') ?>
 
 </body>

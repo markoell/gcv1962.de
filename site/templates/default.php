@@ -8,14 +8,12 @@
 <main>
     <div class="py-5">
         <h1><?= $page->title()->html() ?></h1>
-
-        <?php if (count($sections) > 0) : ?>
-            <?php $n = 0;
-            foreach ($sections as $section) : ?>
-                <section id="<?= html($section->uid()) ?>" class="mx-3">
-                    <?php snippet(strtolower($section->intendedTemplate()), array('data' => $section)) ?>
-                </section>
-            <?php endforeach ?>
+        <?php if($page->hasListedChildren()): ?>
+        <?php foreach ($page->children()->listed() as $key => $section): ?>
+            <section id="<?= html($section->uid()) ?>">
+                <?php snippet([$key, strtolower($section->intendedTemplate()), 'default'], ['id' => $key, 'page' => $section]) ?>
+            </section>
+        <?php endforeach ?>
         <?php else : ?>
             <div class="container">
                 <?= $page->text()->kirbytext() ?>

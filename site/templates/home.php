@@ -6,7 +6,7 @@
       <section id="<?= html($section->uid()) ?>">
         <?php snippet([$key, strtolower($section->intendedTemplate()), 'default'], ['id' => $key, 'page' => $section]) ?>
       </section>
-    <?php endforeach ?> 
+    <?php endforeach ?>
     
   <?php else: ?>
     <section id="<?= $page->title()->html() ?>" class="my-5">
