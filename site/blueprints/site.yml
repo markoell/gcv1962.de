@@ -4,7 +4,7 @@ title: Site
 tabs:
     content:
         icon: text
-        label: 
+        label:
             en: Overview
             de: Übersicht
         columns:
@@ -43,11 +43,11 @@ tabs:
                         max: 5
 
             - width: 1/3
-                sections:                
+                sections:
                     listed_speech:
                         type: pages
                         image: icon
-                        label: 
+                        label:
                             en: Speech
                             de: Ansprache
                         parent: site.find("home/ansprache")
@@ -59,7 +59,7 @@ tabs:
                     draft_speech:
                         type: pages
                         image: false
-                        label: 
+                        label:
                             en: Draft
                             de: Entwürfe
                         empty:
@@ -81,7 +81,7 @@ tabs:
                         image: icon
                         parent: site.find("dates")
                         status: listed
-                
+
             - width: 1/3
                 sections:
                     pages_active:
@@ -107,10 +107,9 @@ tabs:
                             - home
                             - footer
                             - error
-            
 
             - width: 2/4
-                sections:       
+                sections:   
                     facebook:
                         type: fields
                         fields:
@@ -123,10 +122,10 @@ tabs:
                                 query: kirby.users.filterBy("support","true")
                                 disabled: kirby.user.isAdmin
 
-    seotab: seo              
-    
+    seotab: seo
+
     technical:
-        label: 
+        label:
             en: Technical
             de: Technisch
         columns:
@@ -134,10 +133,10 @@ tabs:
                 sections:
                     pages_all:
                         type: pages
-                        label: 
+                        label:
                             en: All Pages
                             de: Alle Seiten
-                
+
             - width: 1/3
                 sections:
                     site_files:
@@ -172,7 +171,7 @@ tabs:
                             logotext:
                                 label: Logotext
                                 type: textarea
-            
+
             - width: 2/4
                 sections:
                     copyright:
