@@ -1,1 +1,1 @@
-<?= $data->text()->kirbytext() ?>
+<?= $page->text()->kirbytext() ?>

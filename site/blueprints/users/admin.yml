@@ -23,10 +23,10 @@ columns:
         label: Support
         type: toggle
         text:
-          - 
+          -
             en: "no"
             de: "nein"
-          - 
+          -
             en: "yes"
             de: "ja"
 
