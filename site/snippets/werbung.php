@@ -1,16 +1,9 @@
-<?php if($page->hasListedChildren()): ?>
-  <?php foreach ($page->children()->listed() as $key => $value): ?>
-    <div id="<?php $key ?>" class="container mt-5">
-        <?php snippet([$key, strtolower($value->intendedTemplate()), 'default'], ['page' => $value]) ?>
-    </div>
-<?php endforeach ?>
-<?php else: ?>
-  <h2 id="<?= $page->title()->html() ?>"><?= $page->title()->html() ?></h2>
-  <?php foreach ($page->layout()->toLayouts() as $layout): ?>
-  <div class="row justify-content-around" id="<?= $layout->id() ?>">
+<h1 id="<?= $page->title()->html() ?>" class="text-center py-5"><?= $page->title()->html() ?></h1>
+<?php foreach ($page->layout()->toLayouts() as $layout): ?>
+  <div class="row" id="<?= $layout->id() ?>">
     <?php foreach ($layout->columns() as $column): ?>
       <?php if ($column->blocks()->isNotEmpty()): ?>
-        <div class="col p-2">
+        <div class="col d-flex justify-content-around">
           <div class="blocks">
             <?= $column->blocks() ?>
           </div>
@@ -19,4 +12,3 @@
     <?php endforeach ?>
   </div>
 <?php endforeach ?>
-<?php endif ?>

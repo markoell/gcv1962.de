@@ -1,0 +1,9 @@
+title: GCV-Link
+image:
+  back: white
+  icon: 📍
+
+fields:
+  url:
+    label: Link
+    type: url

@@ -6,7 +6,7 @@
 
 <?php snippet('header', array('sticky' => true)) ?>
 <main>
-    <div class="py-5">
+    <div class="container py-5">
         <h1><?= $page->title()->html() ?></h1>
         <?php if($page->hasListedChildren()): ?>
         <?php foreach ($page->children()->listed() as $key => $section): ?>
