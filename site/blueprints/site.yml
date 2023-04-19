@@ -103,10 +103,7 @@ tabs:
                         layout: list
                         image: false
                         sortBy: title desc
-                        template:
-                            - home
-                            - footer
-                            - error
+                        status: unlisted
 
             - width: 2/4
                 sections:   
