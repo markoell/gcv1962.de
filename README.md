@@ -56,13 +56,16 @@ To enable extensions, verify that they are enabled in your .ini files:
 ```
 Dann müssen ggf. Packete für PHP nachinstalliert werden:
 ```bash
-sudo apt-get install php7.4-gd
+sudo apt-get install php-gd
 ```
 
 Weitere Module zum Nachinstallieren:
 
 ```bash
+sudo apt-get install php-xml
+sudo apt-get install php-curl
 sudo apt-get install php-mbstring
+
 ```
 
 ## 4. Installation NPM
@@ -70,7 +73,7 @@ sudo apt-get install php-mbstring
 
 ```bash
 # Install Node.js on Ubuntu via package manager
-curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
 sudo apt-get update
 sudo apt-get install -y nodejs
 
