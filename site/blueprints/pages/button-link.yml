@@ -4,6 +4,6 @@ image:
   icon: 📍
 
 fields:
-  url:
+  link:
     label: Link
     type: url
