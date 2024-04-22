@@ -3,9 +3,9 @@
     "description": "Website project for \"Gundelsheimer Carneval-Verein 1962 e.V.\"",
     "type": "project",
     "require": {
-        "getkirby/cms": "^3.9",
+        "getkirby/cms": "^3.10",
         "bnomei/kirby3-fingerprint": "^3.2",
-        "distantnative/retour-for-kirby": "^4.4",
+        "distantnative/retour-for-kirby": "^4.5",
         "medienbaecker/autoresize": "^2.1",
         "diesdasdigital/kirby-meta-knight": "^1.2"
     },
