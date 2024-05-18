@@ -4,7 +4,6 @@ icon: 📅
 
 options:
   url: false
-  status: false
   delete: false
 
 drafts:
