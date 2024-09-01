@@ -1,4 +1,2 @@
 <img src="<?=  asset('/assets/images/gcvLogo.svg')->url() ?>" class="logo mx-auto d-block py-2" alt="Kater Logo">
-<a  class="btn btn-success btn-lg" href="<?= $page->link() ?>">
-  <?= $page->title()->html()  ?>
-</a>
+<a  class="btn btn-success btn-lg" href="<?= $page->link() ?>" target="<?php e($page->target()->toBool() === true, '_blank', '_self') ?>"><?= $page->title()->html() ?></a>

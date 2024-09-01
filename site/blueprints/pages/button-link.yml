@@ -4,6 +4,13 @@ image:
   icon: 📍
 
 fields:
-  url:
+  link:
     label: Link
     type: url
+  
+  target:
+    label: Ziel
+    type: toggle
+    text:
+      en: Open in separate window
+      de: In extra Fenster öffnen
